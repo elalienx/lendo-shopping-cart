@@ -1,4 +1,4 @@
-name: Scoutr Test Suite
+name: Lendo Continuous Integration
 
 on:
   pull_request:
