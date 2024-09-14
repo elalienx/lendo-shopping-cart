@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Circular Pro";
+  src: url("../../assets/fonts/circular-pro-bold-subset.woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Circular Pro";
+  src: url("../../assets/fonts/circular-pro-book-subset.woff2");
+  font-weight: 500;
+}
