@@ -16,6 +16,6 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm run clean-install
+        run: npm clean-install
       - name: Run Vitest
         run: npm run test
