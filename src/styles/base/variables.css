@@ -1,0 +1,32 @@
+:root {
+  /* # Swatches */
+  /* ## Main shades */
+  --color-red: #f2256c;
+  --color-green: #29c768;
+  --color-blue: #007aff;
+  --color-yellow: #f39c12;
+  --color-gray: #6e6e6e;
+  --color-black: #1f1f00;
+
+  /* # Fonts */
+  --font-family: "Helvetica Neue", Helvetica, Segoe UI, Arial, ui-sans-serif,
+    sans-serif;
+  --font-size-normal: 16px;
+  --font-size-small: 12.5px;
+  --font-weight-bold: 500;
+  --font-weight-normal: 300;
+
+  /* # Spacing */
+  --space-big: 32px;
+  --space-medium: 16px;
+  --space-small: 8px;
+
+  /* # Other */
+  --border-radius: 8px;
+
+  /* # Media queries */
+  /* Mobile is the default */
+  --media-query-tablet: 750px;
+  --media-query-laptop: 1000px;
+  --media-query-desktop: 1500px;
+}
