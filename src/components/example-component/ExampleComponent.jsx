@@ -1,7 +1,7 @@
 // Project files
-import FontAwesomeIcon from "./font-awesome/FontAwesomeIcon";
+import FontAwesomeIcon from "../font-awesome/FontAwesomeIcon";
 
-export default function TestComponent() {
+export default function ExampleComponent() {
   return (
     <div>
       <FontAwesomeIcon icon="plus" />
