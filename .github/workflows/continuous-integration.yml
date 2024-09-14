@@ -1,0 +1,21 @@
+name: Scoutr Test Suite
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  frontend-test:
+    name: Frontend unit testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+      - name: Install dependencies
+        run: npm run clean-install
+      - name: Run Vitest
+        run: npm run test
