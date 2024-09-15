@@ -4,11 +4,10 @@ import NotAvailable from "../not-available/NotAvailable";
 import PriceTag from "../price-tag/PriceTag";
 import "./item-checkout.css";
 
-export default function ItemCheckout({ inventory, item }) {
+export default function ItemCheckout({ product, item }) {
   const { id, color, variant, quantity } = item;
 
   // Properties
-  const product = inventory.find((item) => item.id === id);
   // const selectedVariant = findVariant(product, color);
   if (!product) return <NotAvailable />;
 

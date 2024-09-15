@@ -11,11 +11,17 @@ export default function Checkout({ data }) {
   // Global state
   const { cart, dispatch } = useCart();
 
+  // Properties
+  const products = cart.map((item) => data.find((product) => product.id === item.id));
+  const prices = products.map((item) => Number(item.price));
+  const quantities = cart.map((item) => item.quantity);
+  const grandTotal = prices.reduce((sum, price, index) => sum + price * quantities[index], 0);
+
   // Safeguards
   if (!cart.length) return <EmptyState item={EmptyStateText} />;
 
   // Components
-  const Items = cart.map((item, index) => <ItemCheckout key={index} inventory={data} item={item} />);
+  const Items = cart.map((item, index) => <ItemCheckout key={index} product={products[index]} item={item} />);
 
   return (
     <div id="checkout" className="page">
@@ -25,7 +31,7 @@ export default function Checkout({ data }) {
         {Items}
         <section className="grand-total">
           <span className="label">Grand total:</span>
-          <PriceTag price={0} />
+          <PriceTag price={grandTotal} />
         </section>
         <Button label="Proceed to payment" icon="cash-register" onClick={() => alert("End of demo 🎉")} />
       </div>
