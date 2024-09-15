@@ -20,6 +20,7 @@ export default function Product({ data }) {
 
   // Properties
   const product = data.find((item) => item.id === Number(id));
+  const minorDetails = `By ${product.brand} | Weight ${product.weight}`;
   const finalPrice = Number(product.price);
 
   // Safeguards
@@ -31,9 +32,9 @@ export default function Product({ data }) {
       <ImageThumbail />
       <section className="content-group">
         <h1>{product.name}</h1>
-        <small>
-          By {product.brand} | Weight {product.weight}
-        </small>
+        <small>{minorDetails}</small>
+        {/* Color chooser goes here */}
+        {/* Variant chooser goes here */}
         <PriceTag price={finalPrice} />
         <Button label="Add to cart" icon="bag-shopping" disabled={dissabled} />
       </section>
