@@ -46,7 +46,7 @@ export default function Product({ data }) {
   useEffect(() => {
     const newQuantity = availableQuantity === 0 ? 0 : 1;
 
-    setVariant(0); // unset variant as some products have less variants available
+    setVariant(-1); // unset variant as some products have less variants available
     setQuantity(newQuantity);
   }, [color]);
 
@@ -63,6 +63,11 @@ export default function Product({ data }) {
         <PriceTag price={finalPrice} />
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} />
       </section>
+      {/* Debug */}
+      <hr />
+      <p>color: {color}</p>
+      <p>variant: {variant}</p>
+      <p>quantity: {quantity}</p>
     </div>
   );
 }
