@@ -54,7 +54,7 @@ export default function Product({ data }) {
   }, [color]);
 
   function addToCart() {
-    const newItem = { id, color, variant, quantity };
+    const newItem = { id: Number(id), color, variant, quantity };
 
     dispatch({ type: "add-item", payload: newItem });
     navigate("/");

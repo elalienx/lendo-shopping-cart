@@ -5,7 +5,6 @@
   align-items: center;
   gap: var(--space-small);
   width: 100%;
-  padding: var(--space-small);
   color: var(--color-black);
 
   /* Left */

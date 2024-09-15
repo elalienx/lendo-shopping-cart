@@ -24,7 +24,7 @@ export default function Checkout({ data }) {
         <small>{cart.length} items in cart</small>
         {Items}
         <section className="grand-total">
-          <span className="label">Grand Total:</span>
+          <span className="label">Grand total:</span>
           <PriceTag price={0} />
         </section>
         <Button label="Proceed to payment" icon="cash-register" onClick={() => alert("End of demo 🎉")} />
