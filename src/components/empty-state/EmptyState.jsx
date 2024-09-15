@@ -21,7 +21,7 @@ EmptyState.propTypes = {
 };
 
 export default function EmptyState({ item }) {
-  const { title, text, image, alt } = item;
+  const { title, text, image, alt = "" } = item;
 
   return (
     <div className="empty-state">
