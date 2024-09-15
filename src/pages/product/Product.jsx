@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 // Project files
 import Button from "../../components/button/Button";
+import ButtonCircle from "../../components/button-circle/ButtonCircle";
 import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
 import PriceTag from "../../components/price-tag/PriceTag";
@@ -24,11 +25,6 @@ export default function Product({ data }) {
   const [variant, setVariant] = useState(-1);
   const [quantity, setQuantity] = useState(1);
 
-  /**
-   * Note to myself:
-   * Shall I use an useEffect() to reset variant and quantity to 1 when color changes?
-   */
-
   // Properties
   const product = data.find((item) => item.id === Number(id));
 
@@ -47,7 +43,7 @@ export default function Product({ data }) {
 
   // Methods
   useEffect(() => {
-    const newQuantity = availableQuantity === 0 ? 0 : 1;
+    const newQuantity = availableQuantity === 0 ? 0 : 1; // as some products have options withouth items available
 
     setVariant(-1); // unset variant as some products have less variants available
     setQuantity(newQuantity);
@@ -60,6 +56,14 @@ export default function Product({ data }) {
     navigate("/");
   }
 
+  function addQuantity() {
+    if (quantity < availableQuantity) setQuantity(quantity + 1);
+  }
+
+  function removeQuantity() {
+    if (quantity > 1) setQuantity(quantity - 1);
+  }
+
   return (
     <div id="product" className="page">
       <ImageThumbail />
@@ -68,7 +72,11 @@ export default function Product({ data }) {
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
         <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} />
-        <p>Quantity: {quantity}</p>
+        <p className="quantity">
+          Quantity: {quantity}
+          <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
+          <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
+        </p>
         <small>{availableQuantity} units left</small>
         <PriceTag price={finalPrice} />
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
@@ -77,7 +85,9 @@ export default function Product({ data }) {
       <hr />
       <p>color: {color}</p>
       <p>variant: {variant}</p>
-      <p>quantity: {quantity}</p>
+      <p>
+        quantity: {quantity}/{availableQuantity}
+      </p>
     </div>
   );
 }
