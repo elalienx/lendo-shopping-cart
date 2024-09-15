@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // Project files
 import Radio from "./Radio";
+import "./input-radio.css";
 
 InputRadio.propTypes = {
   /** The unique identifier gropping the radio options. */
@@ -28,9 +29,9 @@ export default function InputRadio({ id, label, selectedIndex, options }) {
   ));
 
   return (
-    <label>
+    <label className="input-radio">
       <h3>{label}</h3>
-      {Options}
+      <div className="options">{Options}</div>
     </label>
   );
 }

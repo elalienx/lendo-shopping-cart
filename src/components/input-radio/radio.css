@@ -1,6 +1,4 @@
 .radio {
-  padding: var(--space-small) 0;
-
   input {
     margin-right: var(--space-small);
   }
