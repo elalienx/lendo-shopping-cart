@@ -52,3 +52,14 @@ The tricky part is realizing that **color** serves as the index for product-opti
 ## Cart actions
 
 ![Cart actions table](./public/readme-cart-actions.png)
+
+## Future improvements
+
+The project can be improved adding the following features:
+
+1. Detect when adding the very same product, color, and variant to update quantity instead of adding other item to the cart array.
+1. This projects really could benefit from using Typescript.
+1. Refactor, an extra day would improve legibility.
+1. Build my own notification to avoid depending on a external library.
+1. Add Biome linter.
+1. Add Suspense for optimize build size.
