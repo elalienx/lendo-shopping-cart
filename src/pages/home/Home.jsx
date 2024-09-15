@@ -5,11 +5,11 @@ import EmptyStateText from "./empty-state-text.json";
 import "./home.css";
 
 export default function Home({ data }) {
-  // Components
-  const Products = data.map((item) => <ItemProduct key={item.id} item={item} />);
-
   // Safeguards
   if (!data.length) return <EmptyState item={EmptyStateText} />;
+
+  // Components
+  const Products = data.map((item) => <ItemProduct key={item.id} item={item} />);
 
   return (
     <div id="home" className="page">
