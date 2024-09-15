@@ -21,8 +21,10 @@ export default function ItemCheckout({ product, item, onClick }) {
 
       {/* Middle */}
       <div className="text-group">
-        <p className="name">{product.name}</p>
-        <ButtonCircle icon="trash-can" onClick={onClick} />
+        <p className="name">
+          {product.name}
+          <ButtonCircle icon="trash-can" onClick={onClick} />
+        </p>
       </div>
 
       {/* Right */}
