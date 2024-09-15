@@ -25,11 +25,7 @@ export default function FontAwesomeIcon({ icon, spin }) {
 
   return (
     <span className="fontawesome">
-      <svg
-        className={`icon ${spin && "spin"}`}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox={`0 0 ${shape.width} 512`}
-      >
+      <svg className={`icon ${spin && "spin"}`} xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${shape.width} 512`}>
         <path d={shape.path} />
       </svg>
     </span>

@@ -1,19 +1,17 @@
 .button-circle {
-  --size: 16px;
-
-  line-height: 0;
+  --icon-size: 12px;
 
   background-color: var(--color-blue);
   color: white;
-  padding: var(--space-medium);
+  padding: var(--space-small);
   border: transparent;
   border-radius: 100px; /** to force a circle shape. */
-  font-size: var(--font-size-normal);
+  line-height: 0;
   cursor: pointer;
 
   .icon {
-    width: var(--size);
-    height: var(--size);
+    width: var(--icon-size);
+    height: var(--icon-size);
   }
 }
 

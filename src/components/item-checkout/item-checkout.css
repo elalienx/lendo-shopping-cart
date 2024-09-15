@@ -1,5 +1,6 @@
 .item-checkout {
   --image-size: 32px;
+  --button-circle-size: 16px;
 
   display: flex;
   align-items: center;
@@ -16,6 +17,9 @@
   /* Middle */
   .text-group {
     .name {
+      display: flex;
+      align-items: center;
+      gap: var(--space-small);
       margin-bottom: 0;
     }
   }

@@ -21,7 +21,14 @@ export default function Checkout({ data }) {
   if (!cart.length) return <EmptyState item={EmptyStateText} />;
 
   // Components
-  const Items = cart.map((item, index) => <ItemCheckout key={index} product={products[index]} item={item} />);
+  const Items = cart.map((item, index) => (
+    <ItemCheckout
+      key={index}
+      product={products[index]}
+      item={item}
+      onClick={() => dispatch({ type: "remove-item", payload: index })}
+    />
+  ));
 
   return (
     <div id="checkout" className="page">
