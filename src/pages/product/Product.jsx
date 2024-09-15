@@ -1,5 +1,5 @@
 // Node modules
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Project files
@@ -9,12 +9,15 @@ import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
 import PriceTag from "../../components/price-tag/PriceTag";
 import InputRadio from "../../components/input-radio/InputRadio";
 import extractVariant from "../../scripts/extractVariant";
+import { useCart } from "../../state/CartContext";
 import EmptyStateTexts from "./empty-state-texts.json";
 import "./product.css";
 
 export default function Product({ data }) {
   // Global state
+  const navigate = useNavigate();
   const { id } = useParams();
+  const { dispatch } = useCart();
 
   // Local state
   const [color, setColor] = useState(0); // color acts as the option index
@@ -46,9 +49,16 @@ export default function Product({ data }) {
   useEffect(() => {
     const newQuantity = availableQuantity === 0 ? 0 : 1;
 
-    setVariant(0); // unset variant as some products have less variants available
+    setVariant(-1); // unset variant as some products have less variants available
     setQuantity(newQuantity);
   }, [color]);
+
+  function addToCart() {
+    const newItem = { id: Number(id), color, variant, quantity };
+
+    dispatch({ type: "add-item", payload: newItem });
+    navigate("/");
+  }
 
   return (
     <div id="product" className="page">
@@ -61,8 +71,13 @@ export default function Product({ data }) {
         <p>Quantity: {quantity}</p>
         <small>{availableQuantity} units left</small>
         <PriceTag price={finalPrice} />
-        <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} />
+        <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
       </section>
+      {/* Debug */}
+      <hr />
+      <p>color: {color}</p>
+      <p>variant: {variant}</p>
+      <p>quantity: {quantity}</p>
     </div>
   );
 }

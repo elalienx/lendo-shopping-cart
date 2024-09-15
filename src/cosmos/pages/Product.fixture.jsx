@@ -4,6 +4,7 @@ import { MemoryRouter, Routes, Route } from "react-router-dom";
 // Project files
 import Product from "../../pages/product/Product";
 import Data from "../../data/inventory.json";
+import { CartProvider } from "../../state/CartContext";
 
 // Properties
 const { items } = Data;
@@ -15,9 +16,11 @@ const notAvailable = 5; // this product exist but is not available
 function DecoratorRouter({ element, id }) {
   return (
     <MemoryRouter initialEntries={[`/path/${id}`]}>
-      <Routes>
-        <Route path="/path/:id" element={element} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path="/path/:id" element={element} />
+        </Routes>
+      </CartProvider>
     </MemoryRouter>
   );
 }

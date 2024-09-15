@@ -6,6 +6,7 @@ import { render, screen } from "@testing-library/react";
 // Project files
 import Data from "../../data/inventory.json";
 import Product from "./Product";
+import { CartProvider } from "../../state/CartContext";
 
 /**
  * These tests are wrapped in MagicRouter to support routing with custom ids.
@@ -19,9 +20,11 @@ test("Shows the product", () => {
 
   render(
     <MemoryRouter initialEntries={[`/path/${id}`]}>
-      <Routes>
-        <Route path="/path/:id" element={page} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path="/path/:id" element={page} />
+        </Routes>
+      </CartProvider>
     </MemoryRouter>
   );
 
@@ -41,9 +44,11 @@ test("Shows invalid id error", () => {
 
   render(
     <MemoryRouter initialEntries={[`/path/${id}`]}>
-      <Routes>
-        <Route path="/path/:id" element={page} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path="/path/:id" element={page} />
+        </Routes>
+      </CartProvider>
     </MemoryRouter>
   );
 
@@ -63,9 +68,11 @@ test("Shows product not available error", () => {
 
   render(
     <MemoryRouter initialEntries={[`/path/${id}`]}>
-      <Routes>
-        <Route path="/path/:id" element={page} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path="/path/:id" element={page} />
+        </Routes>
+      </CartProvider>
     </MemoryRouter>
   );
 

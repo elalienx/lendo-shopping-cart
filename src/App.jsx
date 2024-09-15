@@ -8,9 +8,13 @@ import Checkout from "./pages/checkout/Checkout";
 import Home from "./pages/home/Home";
 import Page404 from "./pages/page-404/Page404";
 import Product from "./pages/product/Product";
+import { useCart } from "./state/CartContext";
 
 export default function App() {
   const { items } = Data;
+
+  // Global state
+  const { cart } = useCart();
 
   // Properties
   const checkout = <Checkout data={items} />;
@@ -19,7 +23,7 @@ export default function App() {
   const product = <Product data={items} />;
 
   // Derived state
-  const itemsOnCart = 0; // this will be cart.length
+  const itemsOnCart = cart.length;
 
   return (
     <div className="app">
