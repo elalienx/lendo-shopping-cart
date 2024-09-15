@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background-color: var(--color-page-background);
   color: var(--color-black);
   font-family: var(--font-family);
   font-weight: var(--font-weight-normal);

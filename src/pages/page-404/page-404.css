@@ -1,0 +1,5 @@
+#page-404 {
+  h1 {
+    color: var(--color-red);
+  }
+}
