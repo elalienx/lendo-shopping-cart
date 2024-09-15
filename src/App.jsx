@@ -18,9 +18,12 @@ export default function App() {
   const pageNotFound = <Page404 />;
   const product = <Product data={items} />;
 
+  // Derived state
+  const itemsOnCart = 0; // this will be cart.length
+
   return (
     <div className="app">
-      <NavigationBar />
+      <NavigationBar number={itemsOnCart} />
       <Routes>
         <Route path="/" element={home} />
         <Route path="/product/:id" element={product} />

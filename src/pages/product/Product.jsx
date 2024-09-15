@@ -6,6 +6,7 @@ import Button from "../../components/button/Button";
 import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
 import PriceTag from "../../components/price-tag/PriceTag";
+import InputRadio from "../../components/input-radio/InputRadio";
 
 import EmptyStateTexts from "./empty-state-texts.json";
 import "./product.css";
@@ -26,6 +27,9 @@ export default function Product({ data }) {
   if (!product.available) return <EmptyState item={EmptyStateTexts.not_available} />;
 
   // Derived properties
+  const colors = product.options.map((item) => item.color);
+  const flatColors = colors.flat();
+  console.log(flatColors);
   const additionalDetails = `By ${product.brand} | Weight ${product.weight}`;
   const finalPrice = Number(product.price);
 
@@ -36,6 +40,8 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         {/* 1. Color chooser goes here */}
+        <InputRadio id="color" label="Choose a color:" options={flatColors} />
+
         {/* 2. Variant chooser goes here */}
         {/* 3. Quantity chooser */}
         {/* 4. Units left warning */}
