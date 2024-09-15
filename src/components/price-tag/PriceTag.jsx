@@ -2,9 +2,9 @@
 import PropTypes from "prop-types";
 
 // Project files
-import "./tag-price.css";
+import "./price-tag.css";
 
-TagPrice.propTypes = {
+PriceTag.propTypes = {
   /** The product price. */
   ammount: PropTypes.number.isRequired,
 };
@@ -12,9 +12,9 @@ TagPrice.propTypes = {
 /**
  * In the future, currency can be a prop.
  */
-export default function TagPrice({ ammount }) {
+export default function PriceTag({ ammount }) {
   return (
-    <span className="tag-price">
+    <span className="price-tag">
       <span className="ammount">{ammount}</span>
       <small className="currency">SEK</small>
     </span>
