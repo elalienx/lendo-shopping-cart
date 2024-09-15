@@ -8,10 +8,10 @@ export default function ItemCheckout({ inventory, item }) {
   const { id, color, variant, quantity } = item;
 
   // Properties
-  const selectedProduct = inventory.find((item) => item.id === id);
-  console.log(selectedProduct);
-  const selectedVariant = findVariant(product, color);
-  if (!selectedProduct || !selectedVariant) return <NotAvailable />;
+  const product = inventory.find((item) => item.id === id);
+  console.log("product", product);
+  // const selectedVariant = findVariant(product, color);
+  if (!product) return <NotAvailable />;
 
   // Derived state
   const subTotal = product.price * quantity;

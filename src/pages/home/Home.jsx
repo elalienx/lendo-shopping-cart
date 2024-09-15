@@ -9,12 +9,12 @@ export default function Home({ data }) {
   if (!data.length) return <EmptyState item={EmptyStateText} />;
 
   // Components
-  const Products = data.map((item) => <ItemProduct key={item.id} item={item} />);
+  const Items = data.map((item) => <ItemProduct key={item.id} item={item} />);
 
   return (
     <div id="home" className="page">
       <h1>Our products</h1>
-      <section className="grid">{Products}</section>
+      <section className="grid">{Items}</section>
     </div>
   );
 }
