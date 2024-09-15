@@ -6,6 +6,7 @@
   background-color: var(--color-black);
   color: white;
   border-radius: var(--border-radius);
+  cursor: pointer;
 }
 
 .button-cart:hover {

@@ -1,5 +1,6 @@
 // Node modules
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 // Project files
 import Logo from "../../assets/images/logo.svg";
