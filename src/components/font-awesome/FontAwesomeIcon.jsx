@@ -7,9 +7,7 @@ import "./font-awesome.css";
 
 FontAwesomeIcon.propTypes = {
   /** An array with the icon category, called Prefix, and the icon name */
-  icon: PropTypes.arrayOf(
-    PropTypes.exact([PropTypes.string.isRequired, PropTypes.string.isRequired])
-  ).isRequired,
+  icon: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 
   /** If you want the icon to rotate in its axis. Used for loading animations. */
   spin: PropTypes.bool,
