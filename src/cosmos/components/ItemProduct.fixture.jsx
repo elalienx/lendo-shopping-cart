@@ -10,6 +10,7 @@ const goodProduct = {
   name: "Sony Playstation 4",
   brand: "Sony",
   available: true,
+  weight: 0.5,
   price: "5000",
 };
 const badProduct = {
@@ -17,6 +18,7 @@ const badProduct = {
   name: "N-Gage",
   brand: "Nokia",
   available: false,
+  weight: 0.5,
   price: "1250",
 };
 
