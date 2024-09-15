@@ -3,17 +3,20 @@ import { Route, Routes } from "react-router-dom";
 
 // Project files
 import NavigationBar from "./components/navigation-bar/NavigationBar";
+import Data from "./data/inventory.json";
 import Checkout from "./pages/checkout/Checkout";
 import Home from "./pages/home/Home";
 import Page404 from "./pages/page-404/Page404";
 import Product from "./pages/product/Product";
 
 export default function App() {
+  const { items } = Data;
+
   // Properties
-  const checkout = <Checkout />;
-  const home = <Home />;
+  const checkout = <Checkout data={items} />;
+  const home = <Home data={items} />;
   const pageNotFound = <Page404 />;
-  const product = <Product />;
+  const product = <Product data={items} />;
 
   return (
     <div className="app">
