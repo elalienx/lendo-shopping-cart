@@ -16,7 +16,8 @@ export default function Product({ data }) {
   const { id } = useParams();
 
   // Local state
-  const [colorIndex, setColorIndex] = useState(-1);
+  const [color, setColor] = useState(-1);
+  const [variant, setVariant] = useState(-1);
 
   // Properties
   const product = data.find((item) => item.id === Number(id));
@@ -38,13 +39,8 @@ export default function Product({ data }) {
       <section className="content-group">
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
-        <p>Selected color index: {colorIndex}</p>
-        <InputRadio
-          label="Choose a color:"
-          id="color"
-          state={[colorIndex, setColorIndex]}
-          options={flatColors}
-        />
+        <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={flatColors} />
+        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={[]} />
 
         {/* 2. Variant chooser goes here */}
         {/* 3. Quantity chooser */}
@@ -52,6 +48,8 @@ export default function Product({ data }) {
         <PriceTag price={finalPrice} />
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} />
       </section>
+      <hr />
+      <p>Selected color index: {color}</p>
     </div>
   );
 }
