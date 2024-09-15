@@ -1,17 +1,18 @@
 :root {
   /* # Swatches */
-  --color-red: #f2256c;
-  --color-green: #29c768;
-  --color-blue: #007aff;
-  --color-yellow: #f39c12;
-  --color-gray: #6e6e6e;
   --color-black: #1f1f00;
+  --color-blue: #007aff;
+  --color-gray-dark: #6e6e6e;
+  --color-gray-light: #f5f5f5;
+  --color-green: #29c768;
+  --color-red: #f2256c;
+  --color-yellow: #f39c12;
 
   /* # Fonts */
   --font-family: "Circular Pro", Helvetica, Segoe UI, Arial, ui-sans-serif,
     sans-serif;
-  --font-size-normal: 16px;
-  --font-size-small: 12.5px;
+  --font-size-normal: 15px;
+  --font-size-small: 12px;
   --font-weight-bold: 700;
   --font-weight-normal: 500;
 

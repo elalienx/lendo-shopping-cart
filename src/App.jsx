@@ -2,6 +2,7 @@
 import { Route, Routes } from "react-router-dom";
 
 // Project files
+import NavigationBar from "./components/navigation-bar/NavigationBar";
 import Checkout from "./pages/checkout/Checkout";
 import Home from "./pages/home/Home";
 import Page404 from "./pages/page-404/Page404";
@@ -16,6 +17,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <NavigationBar />
       <Routes>
         <Route path="/" element={home} />
         <Route path="/product/:id" element={product} />
