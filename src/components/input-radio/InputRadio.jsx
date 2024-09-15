@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 // Project files
 import Radio from "./Radio";
+import RadioName from "../../propTypes/RadioName";
 import "./input-radio.css";
 
 InputRadio.propTypes = {
@@ -16,7 +17,7 @@ InputRadio.propTypes = {
   state: PropTypes.array,
 
   /** The options of this radio group */
-  options: PropTypes.arrayOf(PropTypes.string),
+  options: PropTypes.arrayOf(RadioName),
 };
 
 export default function InputRadio({ id, label, state, options }) {

@@ -2,6 +2,7 @@
 import PropTypes from "prop-types";
 
 // Project files
+import RadioName from "../../propTypes/RadioName";
 import "./radio.css";
 
 Radio.propTypes = {
@@ -15,7 +16,7 @@ Radio.propTypes = {
   state: PropTypes.array,
 
   /** The text to diplay to the user. */
-  name: PropTypes.string.isRequired,
+  name: RadioName,
 };
 
 export default function Radio({ id, index, state, name }) {

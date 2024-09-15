@@ -8,6 +8,7 @@ import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
 import PriceTag from "../../components/price-tag/PriceTag";
 import InputRadio from "../../components/input-radio/InputRadio";
+import extractVariant from "../../scripts/extractVariant";
 import EmptyStateTexts from "./empty-state-texts.json";
 import "./product.css";
 
@@ -31,7 +32,8 @@ export default function Product({ data }) {
   const additionalDetails = `By ${product.brand} | Weight ${product.weight}`;
   const colors = product.options.map((item) => item.color).flat();
   const selectedOption = product.options[color];
-  // const selectedVariant = selectedOption.map((item) => item);
+  const variants = extractVariant(selectedOption, ["color", "quantity"]);
+  console.log(variants);
   const availableQuantity = selectedOption.quantity;
   const finalPrice = Number(product.price) * quantity;
   const buttonIsEnabled = false;
