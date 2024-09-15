@@ -22,7 +22,22 @@ export default function EmptyState({ item }) {
 
   return (
     <div className="empty-state">
-      <img src={image} alt={alt} />
+      <picture>
+        <source
+          srcSet={`${image}.avif`}
+          width="234"
+          height="200"
+          media="(max-width: 400px)"
+        />
+        <img
+          alt={alt}
+          className="image"
+          src={`${image}-desktop.avif`}
+          width="368"
+          height="315"
+          fetchpriority="high"
+        />
+      </picture>
       <h1>{title}</h1>
       <p>{text}</p>
     </div>
