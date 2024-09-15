@@ -1,4 +1,9 @@
 .button-cart {
+  display: flex;
+  gap: var(--space-small);
+  align-items: center;
+  padding: var(--space-small) var(--space-medium);
   background-color: var(--color-black);
   color: white;
+  border-radius: var(--border-radius);
 }
