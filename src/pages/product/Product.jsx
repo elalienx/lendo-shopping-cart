@@ -1,6 +1,6 @@
 // Node modules
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Project files
 import Button from "../../components/button/Button";
@@ -40,7 +40,15 @@ export default function Product({ data }) {
   const variants = extractVariant(selectedOption, ["color", "quantity"]);
   const availableQuantity = selectedOption.quantity;
   const finalPrice = Number(product.price) * quantity;
-  const buttonIsEnabled = false;
+  const buttonIsEnabled = color > -1 && variant > -1 && quantity > 0;
+
+  // Methods
+  useEffect(() => {
+    const newQuantity = availableQuantity === 0 ? 0 : 1;
+
+    setVariant(0); // unset variant as some products have less variants available
+    setQuantity(newQuantity);
+  }, [color, variant]);
 
   return (
     <div id="product" className="page">
@@ -50,7 +58,7 @@ export default function Product({ data }) {
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
         <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} />
-        {/* 4. Units left warning */}
+        <p>Quantity: {quantity}</p>
         <small>{availableQuantity} units left</small>
         <PriceTag price={finalPrice} />
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} />
