@@ -2,6 +2,6 @@
 import PriceTag from "../../components/price-tag/PriceTag";
 
 export default {
-  NoAmmount: <PriceTag ammount={0} />,
-  SomeAmmount: <PriceTag ammount={5000} />,
+  NoAmmount: <PriceTag price={0} />,
+  SomeAmmount: <PriceTag price={5000} />,
 };

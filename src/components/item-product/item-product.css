@@ -1,0 +1,10 @@
+.item-product {
+  background-color: white;
+  color: var(--color-black);
+}
+
+@media (min-width: 750px) {
+  .item-product {
+    background-color: wheat;
+  }
+}

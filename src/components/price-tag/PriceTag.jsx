@@ -6,16 +6,16 @@ import "./price-tag.css";
 
 PriceTag.propTypes = {
   /** The product price. */
-  ammount: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 /**
  * In the future, currency can be a prop.
  */
-export default function PriceTag({ ammount }) {
+export default function PriceTag({ price }) {
   return (
     <span className="price-tag">
-      <span className="ammount">{ammount}</span>
+      <span className="price">{price}</span>
       <small className="currency">SEK</small>
     </span>
   );
