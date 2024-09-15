@@ -12,20 +12,17 @@ InputRadio.propTypes = {
   /** The title of the radio group the user sees. */
   label: PropTypes.string.isRequired,
 
-  /** The value the user has selected, we sent it to vertify if this is the active radio. */
-  selectedIndex: PropTypes.number,
+  /** The state controlling the input. */
+  state: PropTypes.array,
 
   /** The options of this radio group */
   options: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default function InputRadio({ id, label, selectedIndex, options }) {
-  console.log("id", id, "selectedIndex", selectedIndex, "options:");
-  console.log(options);
-
+export default function InputRadio({ id, label, state, options }) {
   // Components
   const Options = options.map((item, index) => (
-    <Radio key={`${id}-${index}`} id={id} index={index} selectedIndex={selectedIndex} name={item} />
+    <Radio key={`${id}-${index}`} id={id} index={index} state={state} name={item} />
   ));
 
   return (

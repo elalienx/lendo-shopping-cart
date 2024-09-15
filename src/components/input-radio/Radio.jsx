@@ -12,16 +12,24 @@ Radio.propTypes = {
   index: PropTypes.number.isRequired,
 
   /** The value the user has selected, we sent it to vertify if this is the active radio. */
-  selectedIndex: PropTypes.number,
+  state: PropTypes.array,
 
   /** The text to diplay to the user. */
   name: PropTypes.string.isRequired,
 };
 
-export default function Radio({ id, index, selectedIndex, name }) {
+export default function Radio({ id, index, state, name }) {
+  const [selectedIndex, setSelectedIndex] = state;
+
   return (
     <label className="radio">
-      <input type="radio" name={id} value={index} defaultChecked={index === selectedIndex} />
+      <input
+        type="radio"
+        name={id}
+        value={index}
+        defaultChecked={index === selectedIndex}
+        onChange={() => setSelectedIndex(index)}
+      />
       {name}
     </label>
   );
