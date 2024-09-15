@@ -8,7 +8,7 @@ export default function Home({ data }) {
   // Components
   const Products = data.map((item) => <ItemProduct key={item.id} item={item} />);
 
-  // Safeguard
+  // Safeguards
   if (!data.length) return <EmptyState item={EmptyStateText} />;
 
   return (
