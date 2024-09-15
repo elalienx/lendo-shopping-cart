@@ -6,7 +6,7 @@ import "./badge.css";
 
 Badge.propTypes = {
   /** A number to display in this notification badge. */
-  number: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
 };
 
 export default function Badge({ number }) {
