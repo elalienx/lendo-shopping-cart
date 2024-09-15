@@ -35,14 +35,14 @@ export default function ItemProduct({ item }) {
   const link = available ? `products/${id}` : "#";
 
   return (
-    <Link to={link} className="item-product">
+    <Link to={link} className={`item-product ${!available && "dissabled"}`}>
       {/* Left mobile, top desktop */}
       <ImageThumbnail />
 
       {/* Middle */}
       <div className="text-group">
-        <p>{name}</p>
-        <small>{brand}</small>
+        <p className="name">{name}</p>
+        <small className="brand">{brand}</small>
         {!available && <NotAvailable />}
       </div>
 
