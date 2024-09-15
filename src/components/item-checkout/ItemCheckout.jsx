@@ -1,14 +1,14 @@
 // Project files
 import ImageThumbnail from "../image-thumbnail/ImageThumbnail";
 import NotAvailable from "../not-available/NotAvailable";
+import ButtonCircle from "../../components/button-circle/ButtonCircle";
 import PriceTag from "../price-tag/PriceTag";
 import "./item-checkout.css";
 
-export default function ItemCheckout({ product, item }) {
-  const { id, color, variant, quantity } = item;
+export default function ItemCheckout({ product, item, onClick }) {
+  const { id, quantity } = item;
 
   // Properties
-  // const selectedVariant = findVariant(product, color);
   if (!product) return <NotAvailable />;
 
   // Derived state
@@ -22,6 +22,7 @@ export default function ItemCheckout({ product, item }) {
       {/* Middle */}
       <div className="text-group">
         <p className="name">{product.name}</p>
+        <ButtonCircle icon="trash-can" onClick={onClick} />
       </div>
 
       {/* Right */}
