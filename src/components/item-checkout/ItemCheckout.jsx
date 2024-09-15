@@ -6,7 +6,7 @@ import PriceTag from "../price-tag/PriceTag";
 import "./item-checkout.css";
 
 export default function ItemCheckout({ product, item, onClick }) {
-  const { id, quantity } = item;
+  const { quantity } = item;
 
   // Properties
   if (!product) return <NotAvailable />;

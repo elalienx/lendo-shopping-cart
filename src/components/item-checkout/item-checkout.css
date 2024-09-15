@@ -1,5 +1,6 @@
 .item-checkout {
   --image-size: 32px;
+  --button-circle-size: 16px;
 
   display: flex;
   align-items: center;
