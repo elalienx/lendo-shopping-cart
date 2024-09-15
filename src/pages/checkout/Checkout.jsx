@@ -14,6 +14,7 @@ export default function Checkout() {
   return (
     <div id="checkout" className="page">
       <h1>Your Cart</h1>
+      <small>{cart.length} items in cart</small>
     </div>
   );
 }
