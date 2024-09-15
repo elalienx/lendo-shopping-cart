@@ -1,0 +1,11 @@
+.radio-option {
+  padding: var(--space-small) 0;
+
+  input {
+    margin-right: var(--space-small);
+  }
+}
+
+.radio-option input:focus {
+  outline: none;
+}

@@ -10,6 +10,13 @@ To run locally clone this repository into your computer and then:
 1. Run using `npm run dev`.
 1. Open your browser and navigate to `http://localhost:5173`.
 
+## View React Components
+
+If you'd like to view the React components individually, you can use the component gallery built with [React Cosmos](https://reactcosmos.org):
+
+1. Start the component gallery with `npm run cosmos`
+1. Open your browser and go to `localhost:5001` (or the port specified in the terminal).
+
 ## Requirements
 
 Create the following views/pages using the mock JSON:
