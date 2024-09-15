@@ -12,6 +12,13 @@ To run locally clone this repository into your computer and then:
 1. Run using `npm run dev`.
 1. Open your browser and navigate to `http://localhost:5173`.
 
+## Features
+
+1. A CI/CD pipeline that runs the Vitest test, React Testing Library tests, and deploys to Firebase Hosting.
+1. A gallery to view components similar to Storybook but with a lighter libraty called [React Cosmos](https://reactcosmos.org).
+1. Reducers to mutate the state outside React and make it easily testable.
+1. Responsive design.
+
 ## View React Components
 
 If you'd like to view the React components individually, you can use the component gallery built with [React Cosmos](https://reactcosmos.org):
