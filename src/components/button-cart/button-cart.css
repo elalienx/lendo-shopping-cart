@@ -6,6 +6,8 @@
   background-color: var(--color-black);
   color: white;
   border-radius: var(--border-radius);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-bold);
   cursor: pointer;
 }
 

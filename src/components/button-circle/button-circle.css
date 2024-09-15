@@ -8,7 +8,7 @@
   padding: var(--space-medium);
   border: transparent;
   border-radius: 100px; /** to force a circle shape. */
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-normal);
   cursor: pointer;
 
   .icon {

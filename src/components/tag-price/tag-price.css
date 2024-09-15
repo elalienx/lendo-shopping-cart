@@ -1,0 +1,9 @@
+.tag-price {
+  text-align: right;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+
+  .ammount {
+    margin: 2px;
+  }
+}

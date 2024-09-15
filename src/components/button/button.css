@@ -5,7 +5,7 @@
   padding: var(--space-small) var(--space-medium);
   border: transparent;
   border-radius: var(--border-radius);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-normal);
   font-weight: var(--font-weight-bold);
   cursor: pointer;
 
