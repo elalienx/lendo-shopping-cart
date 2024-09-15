@@ -32,7 +32,7 @@ export default function ItemProduct({ item }) {
   const { id, name, brand, available, price } = item;
 
   // Properties
-  const link = available ? `products/${id}` : "#";
+  const link = available ? `product/${id}` : "#";
 
   return (
     <Link to={link} className={`item-product ${!available && "dissabled"}`}>
