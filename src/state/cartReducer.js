@@ -5,7 +5,7 @@ export default function cartReducer(state, actions) {
     case "add-item":
       return changeAge(state, actions);
     case "update-item-quantity":
-      return updateItemQuantity(state, actions);
+      return updateItemQuantity(state, actions); // pending
     case "remove-item":
       return removeItem(state, actions);
     default:
