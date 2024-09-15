@@ -1,6 +1,9 @@
 // Node modules
 import PropTypes from "prop-types";
 
+// Project files
+import ProductOption from "./ProductOption";
+
 const Product = {
   item: PropTypes.exact({
     /** Item ID for navigation. */
@@ -22,17 +25,7 @@ const Product = {
     weight: PropTypes.number.isRequired,
 
     /** The sub-variants of each product */
-    options: PropTypes.arrayOf(
-      PropTypes.exact({
-        color: PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.arrayOf(PropTypes.string), // to handle edge case
-        ]).isRequired,
-        power: PropTypes.arrayOf(PropTypes.number),
-        storage: PropTypes.arrayOf(PropTypes.string),
-        quantity: PropTypes.number.isRequired,
-      })
-    ),
+    options: ProductOption,
   }),
 };
 
