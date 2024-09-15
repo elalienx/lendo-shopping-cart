@@ -21,6 +21,11 @@ export default function Product({ data }) {
   const [variant, setVariant] = useState(-1);
   const [quantity, setQuantity] = useState(1);
 
+  /**
+   * Note to myself:
+   * Shall I use an useEffect() to reset variant and quantity to 1 when color changes?
+   */
+
   // Properties
   const product = data.find((item) => item.id === Number(id));
 
@@ -33,7 +38,6 @@ export default function Product({ data }) {
   const colors = product.options.map((item) => item.color).flat();
   const selectedOption = product.options[color];
   const variants = extractVariant(selectedOption, ["color", "quantity"]);
-  console.log(variants);
   const availableQuantity = selectedOption.quantity;
   const finalPrice = Number(product.price) * quantity;
   const buttonIsEnabled = false;
@@ -45,8 +49,7 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={[]} />
-        {/* 3. Quantity chooser */}
+        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} />
         {/* 4. Units left warning */}
         <small>{availableQuantity} units left</small>
         <PriceTag price={finalPrice} />
