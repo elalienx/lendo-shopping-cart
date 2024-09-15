@@ -6,33 +6,17 @@ import PropTypes from "prop-types";
 import ImageThumbnail from "../image-thumbnail/ImageThumbnail";
 import NotAvailable from "../not-available/NotAvailable";
 import PriceTag from "../price-tag/PriceTag";
+import Product from "../../propTypes/Product";
 import "./item-product.css";
 
-// Refactor to a separate file
-ItemProduct.propTypes = {
-  item: PropTypes.exact({
-    /** Item ID for navigation. */
-    id: PropTypes.number.isRequired,
-
-    /** The product name. */
-    name: PropTypes.string.isRequired,
-
-    /** The manufacturer name. */
-    brand: PropTypes.string.isRequired,
-
-    /** To see if the product is available. If not, show a warning and dissable link. */
-    available: PropTypes.bool.isRequired,
-
-    /** The product price as a string. */
-    price: PropTypes.number.isRequired,
-  }),
-};
+ItemProduct.propTypes = Product;
 
 export default function ItemProduct({ item }) {
   const { id, name, brand, available, price } = item;
 
   // Properties
   const link = available ? `product/${id}` : "#";
+  const parsedPrice = Number(price);
 
   return (
     <Link to={link} className={`item-product ${!available && "dissabled"}`}>
@@ -47,7 +31,7 @@ export default function ItemProduct({ item }) {
       </div>
 
       {/* Right mobile, bottom desktop */}
-      <PriceTag price={price} />
+      <PriceTag price={parsedPrice} />
     </Link>
   );
 }

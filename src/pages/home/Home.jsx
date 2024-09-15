@@ -13,7 +13,7 @@ export default function Home({ data }) {
 
   return (
     <div id="home" className="page">
-      <h1>Products</h1>
+      <h1>Our products</h1>
       <section className="grid">{Products}</section>
     </div>
   );
