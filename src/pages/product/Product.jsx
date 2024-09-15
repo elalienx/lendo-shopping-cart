@@ -16,16 +16,16 @@ export default function Product({ data }) {
   const { id } = useParams();
 
   // Local state
-  const [dissabled, setDissabled] = useState(false);
-
-  // Properties
-  const product = data.find((item) => item.id === Number(id));
-  const minorDetails = `By ${product.brand} | Weight ${product.weight}`;
-  const finalPrice = Number(product.price);
+  const [dissabled, setDissabled] = useState(true);
 
   // Safeguards
+  const product = data.find((item) => item.id === Number(id));
   if (!product) return <EmptyState item={EmptyStateTexts.invalid_product} />;
   if (!product.available) return <EmptyState item={EmptyStateTexts.not_available} />;
+
+  // Properties
+  const minorDetails = `By ${product.brand} | Weight ${product.weight}`;
+  const finalPrice = Number(product.price);
 
   return (
     <div id="product" className="page">
