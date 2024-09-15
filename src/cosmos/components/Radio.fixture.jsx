@@ -1,5 +1,5 @@
 // Project files
-import RadioOption from "../../components/input-radio/RadioOption";
+import Radio from "../../components/input-radio/Radio";
 
 // Properties
 const defaultItem = {
@@ -16,6 +16,6 @@ const activeItem = {
 };
 
 export default {
-  Default: <RadioOption item={defaultItem} />,
-  Active: <RadioOption item={activeItem} />,
+  Default: <Radio item={defaultItem} />,
+  Active: <Radio item={activeItem} />,
 };
