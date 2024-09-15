@@ -4,6 +4,7 @@
   min-width: var(--size);
   height: var(--size);
   background-color: var(--color-green);
+  padding: 0 8px;
   color: white;
   line-height: var(--size);
   text-align: center;

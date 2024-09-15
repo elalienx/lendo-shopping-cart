@@ -10,5 +10,7 @@ Badge.propTypes = {
 };
 
 export default function Badge({ number }) {
-  return <div className="badge">{number}</div>;
+  const finalNumber = number < 100 ? number : "99+";
+
+  return <div className="badge">{finalNumber}</div>;
 }
