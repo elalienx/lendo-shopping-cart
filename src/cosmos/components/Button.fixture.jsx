@@ -1,5 +1,5 @@
 // Project files
-import Button from "../../components/Button/Button";
+import Button from "../../components/button/Button";
 
 export default {
   Normal: <Button label="Add to cart" icon="bag-shopping" />,
