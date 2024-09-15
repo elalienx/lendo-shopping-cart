@@ -1,2 +1,15 @@
 #home {
+  .grid {
+    display: grid;
+    gap: var(--space-small);
+  }
+}
+
+@media (min-width: 750px) {
+  #home {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-medium);
+    }
+  }
 }

@@ -8,7 +8,7 @@ p {
 }
 
 h1 {
-  margin-bottom: 0;
+  margin-bottom: var(--space-medium);
   font-size: 48px;
   line-height: 1;
 }

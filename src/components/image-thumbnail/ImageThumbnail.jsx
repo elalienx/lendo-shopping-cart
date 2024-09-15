@@ -14,7 +14,6 @@ ImageThumbnail.propTypes = {
 };
 
 export default function ImageThumbnail({ image = "", alt = "" }) {
-  console.log(image);
   // Properties
   const Source = image === "" ? Placeholder : image;
 
