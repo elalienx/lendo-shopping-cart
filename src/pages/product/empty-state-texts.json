@@ -1,0 +1,14 @@
+{
+  "invalid_product": {
+    "title": "Invalid product",
+    "text": "This product does not exist. Maybe you just saw it in a dream!",
+    "image": "/state-product-1",
+    "alt": "A guy sleping in a bed shaped like a dollar bill."
+  },
+  "not_available": {
+    "title": "Product not available",
+    "text": "This product is temporally sold out. We are running to our warehouse to get more!",
+    "image": "/state-product-2",
+    "alt": "A guy running desperately almost spilling his coffe."
+  }
+}
