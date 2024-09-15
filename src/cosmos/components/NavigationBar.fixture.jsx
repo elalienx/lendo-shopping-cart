@@ -24,12 +24,12 @@ export default {
   ),
   FewItems: (
     <DecoratorRouter>
-      <NavigationBar />
+      <NavigationBar number={3} />
     </DecoratorRouter>
   ),
   TooManyItems: (
     <DecoratorRouter>
-      <NavigationBar />
+      <NavigationBar number={100} />
     </DecoratorRouter>
   ),
 };
