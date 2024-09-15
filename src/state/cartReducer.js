@@ -2,6 +2,11 @@
 import addItem from "./actions/addItem";
 import removeItem from "./actions/removeItem";
 
+/**
+ * @param {Cart[]} state
+ * @param {CartAction} action
+ * @returns
+ */
 export default function cartReducer(state, actions) {
   const { type } = actions;
 
