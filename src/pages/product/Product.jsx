@@ -26,7 +26,7 @@ export default function Product({ data }) {
   if (!product.available) return <EmptyState item={EmptyStateTexts.not_available} />;
 
   // Derived properties
-  const minorDetails = `By ${product.brand} | Weight ${product.weight}`;
+  const additionalDetails = `By ${product.brand} | Weight ${product.weight}`;
   const finalPrice = Number(product.price);
 
   return (
@@ -34,7 +34,7 @@ export default function Product({ data }) {
       <ImageThumbail />
       <section className="content-group">
         <h1>{product.name}</h1>
-        <small>{minorDetails}</small>
+        <small>{additionalDetails}</small>
         {/* 1. Color chooser goes here */}
         {/* 2. Variant chooser goes here */}
         {/* 3. Quantity chooser */}
