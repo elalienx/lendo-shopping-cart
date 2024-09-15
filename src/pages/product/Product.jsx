@@ -48,7 +48,7 @@ export default function Product({ data }) {
 
     setVariant(0); // unset variant as some products have less variants available
     setQuantity(newQuantity);
-  }, [color, variant]);
+  }, [color]);
 
   return (
     <div id="product" className="page">
