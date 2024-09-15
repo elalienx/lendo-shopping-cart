@@ -81,13 +81,6 @@ export default function Product({ data }) {
         <PriceTag price={finalPrice} />
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
       </section>
-      {/* Debug */}
-      <hr />
-      <p>color: {color}</p>
-      <p>variant: {variant}</p>
-      <p>
-        quantity: {quantity}/{availableQuantity}
-      </p>
     </div>
   );
 }
