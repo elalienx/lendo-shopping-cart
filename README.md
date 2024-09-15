@@ -26,3 +26,9 @@ Create the following views/pages using the mock JSON:
    - A checkout view where a user can see their cart before proceeding with payments.
    - The user should be able to increment and decrement the product quantity as well.
    - As remove the product completely.
+
+## Product option analysis
+
+![Mind map diagram](./public/product-options-analysis.png)
+
+The tricky part is realizing that **color** serves as the index for product-option. Selecting the first color maps to `array[0]`, the second to `array[1]`, and so on. After that, it’s just a simple filter operation.
