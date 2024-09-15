@@ -2,6 +2,8 @@
 
 This is a coding assignment for Lendo.
 
+Link to demo: [Demo website](https://lendo-shopping-cart.web.app)
+
 ## Installation
 
 To run locally clone this repository into your computer and then:
