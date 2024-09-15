@@ -9,8 +9,8 @@ export default function Product() {
   const { id } = useParams();
 
   return (
-    <div id="product">
-      <h1>Product</h1>
+    <div id="product" className="page">
+      <h1>(Product Name)</h1>
       <small>Product Id: #{id}</small>
     </div>
   );
