@@ -14,7 +14,7 @@ const Context = createContext(null);
 // For the parent
 export function CartProvider({ children }) {
   // Local state
-  const [cart, dispatch] = useReducer(cartReducer, debugState);
+  const [cart, dispatch] = useReducer(cartReducer, []);
 
   return <Context.Provider value={{ cart, dispatch }}>{children}</Context.Provider>;
 }
