@@ -8,7 +8,7 @@ import NavigationBar from "../../components/navigation-bar/NavigationBar";
 function DecoratorRouter({ children }) {
   return (
     <BrowserRouter>
-      <div className="page" style={{ maxWidth: "1200px", width: "100%" }}>
+      <div className="page" style={{ maxWidth: "1200px", width: "100%", display: "grid", placeItems: "center" }}>
         {children}
       </div>
     </BrowserRouter>
