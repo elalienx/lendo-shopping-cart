@@ -3,8 +3,8 @@ import "./checkout.css";
 
 export default function Checkout() {
   return (
-    <div id="checkout">
-      <h1>Checkout</h1>
+    <div id="checkout" className="page">
+      <h1>Your Cart</h1>
     </div>
   );
 }
