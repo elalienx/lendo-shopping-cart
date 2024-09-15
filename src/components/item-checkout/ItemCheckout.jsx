@@ -9,6 +9,7 @@ export default function ItemCheckout({ inventory, item }) {
 
   // Properties
   const product = inventory.find((item) => item.id === id);
+  console.log("cart data:", item);
   console.log("product", product);
   // const selectedVariant = findVariant(product, color);
   if (!product) return <NotAvailable />;
