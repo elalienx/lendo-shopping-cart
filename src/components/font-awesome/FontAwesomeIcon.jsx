@@ -1,6 +1,17 @@
+// Node modules
+import PropTypes from "prop-types";
+
 // Project files
 import icons from "./font-awesome.json";
 import "./font-awesome.css";
+
+FontAwesomeIcon.propTypes = {
+  /** An array with the icon category, called Prefix, and the icon name */
+  icon: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+
+  /** If you want the icon to rotate in its axis. Used for loading animations. */
+  spin: PropTypes.bool,
+};
 
 export default function FontAwesomeIcon({ icon, spin }) {
   const [prefix, name] = icon;

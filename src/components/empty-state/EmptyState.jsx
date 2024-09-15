@@ -8,27 +8,25 @@ EmptyState.propTypes = {
   item: PropTypes.exact({
     /** A clear title explaining what happened. */
     title: PropTypes.string.isRequired,
+
     /** Add some humor to further explain the situation. */
     text: PropTypes.string.isRequired,
+
     /** An image related to the text above. */
     image: PropTypes.string.isRequired,
+
     /** Description of the image for accessibility. It's optional as it won't break the componet, but please add it. */
     alt: PropTypes.string,
   }),
 };
 
 export default function EmptyState({ item }) {
-  const { title, text, image, alt } = item;
+  const { title, text, image, alt = "" } = item;
 
   return (
     <div className="empty-state">
       <picture>
-        <source
-          srcSet={`${image}.avif`}
-          width="234"
-          height="200"
-          media="(max-width: 400px)"
-        />
+        <source srcSet={`${image}.avif`} width="234" height="200" media="(max-width: 400px)" />
         <img
           alt={alt}
           className="image"

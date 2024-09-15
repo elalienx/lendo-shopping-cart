@@ -1,5 +1,4 @@
 // Node modules
-import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 // Project files
@@ -24,12 +23,12 @@ export default {
   ),
   FewItems: (
     <DecoratorRouter>
-      <NavigationBar />
+      <NavigationBar number={3} />
     </DecoratorRouter>
   ),
   TooManyItems: (
     <DecoratorRouter>
-      <NavigationBar />
+      <NavigationBar number={100} />
     </DecoratorRouter>
   ),
 };
