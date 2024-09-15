@@ -2,16 +2,8 @@
 import InputRadio from "../../components/input-radio/InputRadio";
 
 // Properties
-const colorOptions = [
-  { name: "Red", value: 0 },
-  { name: "Green", value: 1 },
-  { name: "Blue", value: 2 },
-];
-const storageOptions = [
-  { name: "250", value: 0 },
-  { name: "500", value: 1 },
-  { name: "1000", value: 2 },
-];
+const colorOptions = ["red", "green", "blue"];
+const storageOptions = ["250", "500", "1000"];
 
 export default {
   Default: (
@@ -24,8 +16,8 @@ export default {
   Active: (
     <InputRadio
       id="storage"
-      defaultValue={1}
       label="Choose an storage size:"
+      selectedIndex={1}
       options={storageOptions}
     />
   ),

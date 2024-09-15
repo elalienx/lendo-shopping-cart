@@ -40,7 +40,7 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         {/* 1. Color chooser goes here */}
-        <InputRadio id="color" label="Choose a color:" options={flatColors} />
+        <InputRadio id="color" label="Choose a color:" selectedIndex={0} options={flatColors} />
 
         {/* 2. Variant chooser goes here */}
         {/* 3. Quantity chooser */}

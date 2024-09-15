@@ -2,20 +2,10 @@
 import Radio from "../../components/input-radio/Radio";
 
 // Properties
-const defaultItem = {
-  id: 1,
-  name: "red",
-  value: 1, // same as id
-  defaultValue: 0,
-};
-const activeItem = {
-  id: 0,
-  name: "blue",
-  value: 0, // same as id
-  defaultValue: 0, // same as id if you want to be active
-};
+const id = "color";
+const selectedIndex = 1; // to enable the blue item
 
 export default {
-  Default: <Radio item={defaultItem} />,
-  Active: <Radio item={activeItem} />,
+  Default: <Radio id={id} name="Red" index={0} selectedIndex={selectedIndex} />,
+  Active: <Radio id={id} name="Blue" index={1} selectedIndex={selectedIndex} />,
 };

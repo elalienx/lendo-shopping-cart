@@ -2,27 +2,29 @@
 import PropTypes from "prop-types";
 
 // Project files
-import RadioOption from "../../propTypes/RadioOption";
 import Radio from "./Radio";
 
-InputRadio.prototype = {
+InputRadio.propTypes = {
   /** The unique identifier gropping the radio options. */
   id: PropTypes.string.isRequired,
 
   /** The title of the radio group the user sees. */
   label: PropTypes.string.isRequired,
 
-  /** The value the user chooses in the field. */
-  defaultValue: PropTypes.number,
+  /** The value the user has selected, we sent it to vertify if this is the active radio. */
+  selectedIndex: PropTypes.number,
 
   /** The options of this radio group */
-  options: PropTypes.arrayOf(RadioOption),
+  options: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default function InputRadio({ id, label, defaultValue = -1, options }) {
+export default function InputRadio({ id, label, selectedIndex, options }) {
+  console.log("id", id, "selectedIndex", selectedIndex, "options:");
+  console.log(options);
+
   // Components
-  const Options = options.map((item) => (
-    <Radio key={`${item.value}-${defaultValue}`} item={{ id, defaultValue, ...item }} />
+  const Options = options.map((item, index) => (
+    <Radio key={`${id}-${index}`} id={id} index={index} selectedIndex={selectedIndex} name={item} />
   ));
 
   return (
