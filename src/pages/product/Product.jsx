@@ -78,19 +78,18 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} />
+        <InputRadio
+          key={`variant-${color}`} //
+          label="Choose a variant:"
+          id="variant"
+          state={[variant, setVariant]}
+          options={variants}
+        />
         {quantity ? Quantity : ""}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
       </section>
-      {/* Debug */}
-      <hr />
-      <p>color: {color}</p>
-      <p>variant: {variant}</p>
-      <p>
-        quantity: {quantity}/{availableQuantity}
-      </p>
     </div>
   );
 }
