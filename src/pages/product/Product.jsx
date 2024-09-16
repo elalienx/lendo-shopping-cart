@@ -41,13 +41,20 @@ export default function Product({ data }) {
   const finalPrice = Number(product.price) * quantity;
   const buttonIsEnabled = color > -1 && variant > -1 && quantity > 0;
 
+  // Compoennts
+  const Quantity = (
+    <p className="quantity">
+      Quantity: {quantity}
+      <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
+      <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
+    </p>
+  );
+
   // Methods
   useEffect(() => {
-    const newQuantity = availableQuantity === 0 ? 0 : 1; // as some products have options withouth items available
-
-    setVariant(-1); // unset variant as some products have less variants available
-    setQuantity(newQuantity);
-  }, [color]);
+    setVariant(-1);
+    setQuantity(availableQuantity === 0 ? 0 : 1);
+  }, [color, availableQuantity]);
 
   function addToCart() {
     const newItem = { id: Number(id), color, variant, quantity };
@@ -71,14 +78,16 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} />
-        <p className="quantity">
-          Quantity: {quantity}
-          <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
-          <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
-        </p>
+        <InputRadio
+          key={`variant-${color}`} //
+          label="Choose a variant:"
+          id="variant"
+          state={[variant, setVariant]}
+          options={variants}
+        />
+        {quantity ? Quantity : ""}
         <small>{availableQuantity} units left</small>
-        <PriceTag price={finalPrice} />
+        {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
       </section>
     </div>
