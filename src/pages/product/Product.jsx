@@ -10,6 +10,7 @@ import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
 import PriceTag from "../../components/price-tag/PriceTag";
 import InputRadio from "../../components/input-radio/InputRadio";
+import InputRadioColor from "../../components/input-radio-color/InputRadioColor";
 import extractVariant from "../../scripts/extractVariant";
 import { useCart } from "../../state/CartContext";
 import EmptyStateTexts from "./empty-state-texts.json";
@@ -55,7 +56,7 @@ export default function Product({ data }) {
   useEffect(() => {
     setVariant(-1);
     setQuantity(availableQuantity === 0 ? 0 : 1);
-  }, [color, availableQuantity]);
+  }, [color]);
 
   function addToCart() {
     const newItem = { id: Number(id), color, variant, quantity };
@@ -80,8 +81,8 @@ export default function Product({ data }) {
       <section className="content-group">
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
-        <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
+        <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
+        <InputRadio label="Variant:" id="variant" state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
         {quantity ? Quantity : ""}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
