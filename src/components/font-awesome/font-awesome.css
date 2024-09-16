@@ -3,7 +3,7 @@
 
   height: var(--size);
   fill: currentColor; /** to utilize the parent text color */
-  vertical-align: text-bottom; /** to align icons to the text */
+  vertical-align: text-top; /** to align icons to the text */
 }
 
 .icon.spin {
