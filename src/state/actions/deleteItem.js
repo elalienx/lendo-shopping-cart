@@ -4,9 +4,9 @@
  * @returns
  */
 export default function deleteItem(state, action) {
-  const indexToRemove = action.payload;
+  const index = action.payload;
   const result = [...state];
-  result.splice(indexToRemove, 1);
+  result.splice(index, 1);
 
   return result;
 }

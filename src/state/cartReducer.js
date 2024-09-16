@@ -1,6 +1,7 @@
 // Project files
 import addItem from "./actions/addItem";
 import addQuantity from "./actions/addQuantity";
+import removeQuantity from "./actions/removeQuantity";
 import deleteItem from "./actions/deleteItem";
 
 /**
@@ -16,6 +17,8 @@ export default function cartReducer(state, actions) {
       return addItem(state, actions);
     case "add-quantity":
       return addQuantity(state, actions);
+    case "remove-quantity":
+      return removeQuantity(state, actions);
     case "delete-item":
       return deleteItem(state, actions);
     default:

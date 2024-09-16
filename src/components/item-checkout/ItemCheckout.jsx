@@ -27,6 +27,11 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
         <div className="buttons">
           Quantity: {quantity}
           <ButtonCircle
+            icon="minus"
+            onClick={() => dispatch({ type: "remove-quantity", payload: index })}
+            disabled={quantity === 1}
+          />
+          <ButtonCircle
             icon="plus"
             onClick={() => dispatch({ type: "add-quantity", payload: { index, option } })}
             disabled={quantity >= quantityAvailable}
