@@ -1,10 +1,10 @@
 // Project files
 import Button from "../../components/button/Button";
 import EmptyState from "../../components/empty-state/EmptyState";
-import EmptyStateText from "./empty-state-text.json";
-import PriceTag from "../../components/price-tag/PriceTag";
 import ItemCheckout from "../../components/item-checkout/ItemCheckout";
+import PriceTag from "../../components/price-tag/PriceTag";
 import { useCart } from "../../state/CartContext";
+import EmptyStateText from "./empty-state-text.json";
 import "./checkout.css";
 
 export default function Checkout({ data }) {
