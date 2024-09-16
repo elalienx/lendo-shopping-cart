@@ -40,6 +40,7 @@ export default function Product({ data }) {
   const selectedOption = product.options[color];
   const variants = extractVariant(selectedOption, ["color", "quantity"]);
   const availableQuantity = selectedOption.quantity;
+  const cssUnitsLeft = availableQuantity === 0 ? "no-units-left" : "";
   const finalPrice = Number(product.price) * quantity;
 
   // Button enabling
@@ -71,7 +72,7 @@ export default function Product({ data }) {
         <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
         {variants.length > 0 && <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} />}
         {quantity > 0 && <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity} />}
-        <small>{availableQuantity} units left</small>
+        <small className={cssUnitsLeft}>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
       </section>
