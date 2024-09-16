@@ -14,8 +14,8 @@ To run locally clone this repository into your computer and then:
 
 ## Features
 
-1. A CI/CD pipeline that runs the Vitest test, React Testing Library tests, and deploys to Firebase Hosting.
-1. A gallery to view components similar to Storybook but with a lighter library called [React Cosmos](https://reactcosmos.org).
+1. A CI/CD pipeline that runs the Vitest logic tests, React Testing Library UI tests, and deploys to Firebase Hosting.
+1. A gallery to view components similar to Storybook but with a lighter library and easier configuration called [React Cosmos](https://reactcosmos.org).
 1. Reducers to mutate the state outside React and make it easily testable.
 1. Responsive design.
 1. User flows to plan the UX ([link](https://whimsical.com/lendo-Devit5GaSiDyojUePbMpEz@6HYTAunKLgTVswxCCSQ4eXBALzucnJcoopxkWQAUe9NGL4J))
