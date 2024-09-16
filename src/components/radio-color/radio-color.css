@@ -11,7 +11,7 @@
 
   .swatch,
   .indicator {
-    --size: 32px;
+    --size: 44px;
 
     width: var(--size);
     height: var(--size);
@@ -19,14 +19,12 @@
   }
 
   .swatch {
-    --size: 48px;
-
     background-color: transparent; /** transparent in case of an unknown color */
     border: solid 8px var(--color-black);
   }
 
   .indicator {
-    --size: 10px;
+    --size: 12px; /** override to make the indicator small */
 
     background-color: transparent;
   }
