@@ -2,7 +2,7 @@
 import { expect, test } from "vitest";
 
 // Project files
-import removeItem from "./removeItem";
+import deleteItem from "./deleteItem";
 
 test("Remove and item from array", () => {
   // Arrange
@@ -21,7 +21,7 @@ test("Remove and item from array", () => {
   ];
 
   // Act
-  const test = removeItem(state, action);
+  const test = deleteItem(state, action);
 
   // Assert
   expect(test).toEqual(result);
@@ -45,7 +45,7 @@ test("Does not crash nor mutate state if index is not found", () => {
   ];
 
   // Act
-  const test = removeItem(state, action);
+  const test = deleteItem(state, action);
 
   // Assert
   expect(test).toEqual(result);
