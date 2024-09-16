@@ -1,6 +1,7 @@
 // Project files
 import addItem from "./actions/addItem";
-import removeItem from "./actions/removeItem";
+import addQuantity from "./actions/addQuantity";
+import deleteItem from "./actions/deleteItem";
 
 /**
  * @param {Cart[]} state
@@ -13,8 +14,10 @@ export default function cartReducer(state, actions) {
   switch (type) {
     case "add-item":
       return addItem(state, actions);
-    case "remove-item":
-      return removeItem(state, actions);
+    case "add-quantity":
+      return addQuantity(state, actionss);
+    case "delete-item":
+      return deleteItem(state, actions);
     default:
       throw new Error(`The action "${type}" does not exist on cartReducer()`);
   }

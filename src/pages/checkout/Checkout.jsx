@@ -22,12 +22,7 @@ export default function Checkout({ data }) {
 
   // Components
   const Items = cart.map((item, index) => (
-    <ItemCheckout
-      key={index}
-      product={products[index]}
-      item={item}
-      onRemove={() => dispatch({ type: "remove-item", payload: index })}
-    />
+    <ItemCheckout key={index} product={products[index]} item={item} index={index} dispatch={dispatch} />
   ));
 
   return (
