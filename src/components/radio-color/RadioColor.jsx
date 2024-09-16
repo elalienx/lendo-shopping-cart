@@ -23,7 +23,14 @@ export default function RadioColor({ id, index, state, name }) {
 
   return (
     <label className="radio-color">
-      <input type="radio" name={id} value={index} defaultChecked={index === selectedIndex} onChange={() => setSelectedIndex(index)} />
+      <input
+        type="radio"
+        name={id}
+        value={index}
+        defaultChecked={index === selectedIndex}
+        onChange={() => setSelectedIndex(index)}
+        aria-label={name}
+      />
       <div className={`swatch ${name}`}>{/** empty on purpose, design added with CSS */}</div>
       <div className="indicator">{/** empty on purpose, design added with CSS */}</div>
     </label>
