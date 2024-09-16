@@ -41,6 +41,15 @@ export default function Product({ data }) {
   const finalPrice = Number(product.price) * quantity;
   const buttonIsEnabled = color > -1 && variant > -1 && quantity > 0;
 
+  // Compoennts
+  const Quantity = (
+    <p className="quantity">
+      Quantity: {quantity}
+      <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
+      <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
+    </p>
+  );
+
   // Methods
   useEffect(() => {
     setVariant(-1);
@@ -70,15 +79,7 @@ export default function Product({ data }) {
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
         <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} />
-        {quantity ? (
-          <p className="quantity">
-            Quantity: {quantity}
-            <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
-            <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
-          </p>
-        ) : (
-          ""
-        )}
+        {quantity ? Quantity : ""}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
