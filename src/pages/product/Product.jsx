@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 // Project files
 import Button from "../../components/button/Button";
-import ButtonCircle from "../../components/button-circle/ButtonCircle";
 import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
 import PriceTag from "../../components/price-tag/PriceTag";
@@ -15,6 +14,7 @@ import extractVariant from "../../scripts/extractVariant";
 import { useCart } from "../../state/CartContext";
 import EmptyStateTexts from "./empty-state-texts.json";
 import "./product.css";
+import QuantityChooser from "./components/QuantityChooser";
 
 export default function Product({ data }) {
   // Global state
@@ -48,15 +48,6 @@ export default function Product({ data }) {
   const hasQuantity = quantity > 0;
   const buttonIsEnabled = hasColor && hasVariant && hasQuantity;
 
-  // Compoennts
-  const Quantity = (
-    <p className="quantity">
-      Quantity: {quantity}
-      <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
-      <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
-    </p>
-  );
-
   // Methods
   useEffect(() => {
     setVariant(-1);
@@ -72,14 +63,6 @@ export default function Product({ data }) {
     navigate("/");
   }
 
-  function addQuantity() {
-    if (quantity < availableQuantity) setQuantity(quantity + 1);
-  }
-
-  function removeQuantity() {
-    if (quantity > 1) setQuantity(quantity - 1);
-  }
-
   return (
     <div id="product" className="page">
       <ImageThumbail />
@@ -88,7 +71,7 @@ export default function Product({ data }) {
         <small>{additionalDetails}</small>
         <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
         <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
-        {quantity ? Quantity : ""}
+        {quantity ? <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity}></QuantityChooser> : ""}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
