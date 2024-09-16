@@ -44,11 +44,17 @@ Create the following views/pages using the mock JSON:
    - The user should be able to increment and decrement the product quantity as well. ✅
    - As remove the product completely. ✅
 
-## Product option analysis
+## Product Option Analysis
 
 ![Mind map diagram](./public/readme-product-options-analysis.png)
 
 The tricky part is realizing that **color** serves as the index for product-option. Selecting the first color maps to `array[0]`, the second to `array[1]`, and so on. After that, it’s just a simple filter operation.
+
+## Bugs Alert 🐞
+
+1. There’s a bug preventing the selection of the Samsung TV due to the missing variant. The fix itself should only take a few minutes, but it’s the refactoring needed to identify the bug that takes time. I’ll take a break and return to resolve it.
+
+⚠️ **Note:** If you find any other bug, please open a pull request.
 
 ## Future Improvements
 
