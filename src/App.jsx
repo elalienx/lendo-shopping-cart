@@ -1,5 +1,6 @@
 // Node modules
 import { Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 // Project files
 import NavigationBar from "./components/navigation-bar/NavigationBar";
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/checkout" element={checkout} />
         <Route path="*" element={pageNotFound} />
       </Routes>
+      <Toaster />
     </div>
   );
 }
