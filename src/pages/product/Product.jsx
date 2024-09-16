@@ -7,14 +7,14 @@ import toast from "react-hot-toast";
 import Button from "../../components/button/Button";
 import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
-import PriceTag from "../../components/price-tag/PriceTag";
 import InputRadio from "../../components/input-radio/InputRadio";
 import InputRadioColor from "../../components/input-radio-color/InputRadioColor";
+import PriceTag from "../../components/price-tag/PriceTag";
+import QuantityChooser from "./components/QuantityChooser";
 import extractVariant from "../../scripts/extractVariant";
 import { useCart } from "../../state/CartContext";
 import EmptyStateTexts from "./empty-state-texts.json";
 import "./product.css";
-import QuantityChooser from "./components/QuantityChooser";
 
 export default function Product({ data }) {
   // Global state
