@@ -43,10 +43,9 @@ export default function Product({ data }) {
   const finalPrice = Number(product.price) * quantity;
 
   // Button enabling
-  const hasColor = color > -1;
   const hasVariant = variants.length === 0 || (variants.length > 0 && variant > -1);
   const hasQuantity = quantity > 0;
-  const buttonIsEnabled = hasColor && hasVariant && hasQuantity;
+  const buttonIsEnabled = hasVariant && hasQuantity;
 
   // Methods
   useEffect(() => {
@@ -70,7 +69,7 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
+        <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} />
         {quantity > 0 && <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity}></QuantityChooser>}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}

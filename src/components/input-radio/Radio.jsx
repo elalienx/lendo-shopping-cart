@@ -24,13 +24,7 @@ export default function Radio({ id, index, state, name }) {
 
   return (
     <label className="radio">
-      <input
-        type="radio"
-        name={id}
-        value={index}
-        defaultChecked={index === selectedIndex}
-        onChange={() => setSelectedIndex(index)}
-      />
+      <input type="radio" name={id} value={index} checked={index === selectedIndex} onChange={() => setSelectedIndex(index)} />
       {name}
     </label>
   );
