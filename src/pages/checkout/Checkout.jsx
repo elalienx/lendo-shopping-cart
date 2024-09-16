@@ -26,7 +26,7 @@ export default function Checkout({ data }) {
       key={index}
       product={products[index]}
       item={item}
-      onClick={() => dispatch({ type: "remove-item", payload: index })}
+      onRemove={() => dispatch({ type: "remove-item", payload: index })}
     />
   ));
 

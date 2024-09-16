@@ -5,7 +5,7 @@ import ButtonCircle from "../../components/button-circle/ButtonCircle";
 import PriceTag from "../price-tag/PriceTag";
 import "./item-checkout.css";
 
-export default function ItemCheckout({ product, item, onClick }) {
+export default function ItemCheckout({ product, item, onRemove }) {
   const { quantity } = item;
 
   // Properties
@@ -23,7 +23,7 @@ export default function ItemCheckout({ product, item, onClick }) {
       <div className="text-group">
         <p className="name">
           {product.name}
-          <ButtonCircle icon="trash-can" onClick={onClick} />
+          <ButtonCircle icon="trash-can" onClick={onRemove} />
         </p>
       </div>
 
