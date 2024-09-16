@@ -21,10 +21,13 @@ export default function ItemCheckout({ product, item, onRemove }) {
 
       {/* Middle */}
       <div className="text-group">
-        <p className="name">
-          {product.name}
+        <p className="name">{product.name}</p>
+        <div className="buttons">
+          Quantity: {quantity}
+          <ButtonCircle icon="minus" onClick={() => alert("min")} />
+          <ButtonCircle icon="plus" onClick={() => alert("max")} />
           <ButtonCircle icon="trash-can" onClick={onRemove} />
-        </p>
+        </div>
       </div>
 
       {/* Right */}
