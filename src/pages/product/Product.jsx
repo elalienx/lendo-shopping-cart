@@ -5,12 +5,12 @@ import toast from "react-hot-toast";
 
 // Project files
 import Button from "../../components/button/Button";
-import ButtonCircle from "../../components/button-circle/ButtonCircle";
 import EmptyState from "../../components/empty-state/EmptyState";
 import ImageThumbail from "../../components/image-thumbnail/ImageThumbnail";
-import PriceTag from "../../components/price-tag/PriceTag";
 import InputRadio from "../../components/input-radio/InputRadio";
 import InputRadioColor from "../../components/input-radio-color/InputRadioColor";
+import PriceTag from "../../components/price-tag/PriceTag";
+import QuantityChooser from "./components/QuantityChooser";
 import extractVariant from "../../scripts/extractVariant";
 import { useCart } from "../../state/CartContext";
 import EmptyStateTexts from "./empty-state-texts.json";
@@ -31,8 +31,8 @@ export default function Product({ data }) {
   const product = data.find((item) => item.id === Number(id));
 
   // Safeguards
-  if (!product) return <EmptyState item={EmptyStateTexts.invalid_product} />;
-  if (!product.available) return <EmptyState item={EmptyStateTexts.not_available} />;
+  if (!product) return <EmptyState item={EmptyStateTexts.does_not_exist} />;
+  if (!product.available) return <EmptyState item={EmptyStateTexts.out_of_stock} />;
 
   // Derived properties
   const additionalDetails = `By ${product.brand} | Weight ${product.weight}`;
@@ -43,19 +43,9 @@ export default function Product({ data }) {
   const finalPrice = Number(product.price) * quantity;
 
   // Button enabling
-  const hasColor = color > -1;
   const hasVariant = variants.length === 0 || (variants.length > 0 && variant > -1);
   const hasQuantity = quantity > 0;
-  const buttonIsEnabled = hasColor && hasVariant && hasQuantity;
-
-  // Compoennts
-  const Quantity = (
-    <p className="quantity">
-      Quantity: {quantity}
-      <ButtonCircle icon="minus" onClick={() => removeQuantity()} disabled={quantity === 1} />
-      <ButtonCircle icon="plus" onClick={() => addQuantity()} disabled={quantity === availableQuantity} />
-    </p>
-  );
+  const buttonIsEnabled = hasVariant && hasQuantity;
 
   // Methods
   useEffect(() => {
@@ -72,14 +62,6 @@ export default function Product({ data }) {
     navigate("/");
   }
 
-  function addQuantity() {
-    if (quantity < availableQuantity) setQuantity(quantity + 1);
-  }
-
-  function removeQuantity() {
-    if (quantity > 1) setQuantity(quantity - 1);
-  }
-
   return (
     <div id="product" className="page">
       <ImageThumbail />
@@ -87,8 +69,8 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
-        {quantity ? Quantity : ""}
+        <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} />
+        {quantity > 0 && <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity}></QuantityChooser>}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />

@@ -22,7 +22,7 @@ InputRadio.propTypes = {
 
 export default function InputRadio({ id, label, state, options }) {
   // Components
-  const Options = options.map((item, index) => <Radio key={`${id}-${index}-${item}`} id={id} index={index} state={state} name={item} />);
+  const Options = options.map((item, index) => <Radio key={`${id}-${index}`} id={id} index={index} state={state} name={item} />);
 
   return (
     <label className="input-radio">
