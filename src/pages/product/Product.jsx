@@ -71,7 +71,7 @@ export default function Product({ data }) {
         <small>{additionalDetails}</small>
         <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
         <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
-        {quantity ? <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity}></QuantityChooser> : ""}
+        {quantity > 0 && <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity}></QuantityChooser>}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
         <Button label="Add to cart" icon="bag-shopping" disabled={!buttonIsEnabled} onClick={addToCart} />
