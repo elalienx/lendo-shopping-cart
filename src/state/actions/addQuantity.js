@@ -1,11 +1,14 @@
 export default function addQuantity(state, action) {
   const { index, option } = action.payload;
 
-  const clonedState = [...state];
+  const newState = [...state];
+  const selectedCartItem = { ...newState[index] };
 
-  if (clonedState[index].quantity < option.quantity) {
-    clonedState[index].quantity++;
+  if (selectedCartItem.quantity < option.quantity) {
+    selectedCartItem.quantity++;
   }
 
-  return clonedState;
+  newState[index] = selectedCartItem;
+
+  return newState;
 }
