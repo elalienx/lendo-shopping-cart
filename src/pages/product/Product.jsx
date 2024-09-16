@@ -1,6 +1,7 @@
 // Node modules
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 // Project files
 import Button from "../../components/button/Button";
@@ -58,8 +59,10 @@ export default function Product({ data }) {
 
   function addToCart() {
     const newItem = { id: Number(id), color, variant, quantity };
+    const toastStyle = { backgroundColor: "#29c768", color: "white" };
 
     dispatch({ type: "add-item", payload: newItem });
+    toast("Product added to cart", { position: "bottom-right", style: toastStyle });
     navigate("/");
   }
 
@@ -78,13 +81,7 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadio label="Choose a color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio
-          key={`variant-${color}`} //
-          label="Choose a variant:"
-          id="variant"
-          state={[variant, setVariant]}
-          options={variants}
-        />
+        <InputRadio label="Choose a variant:" id="variant" state={[variant, setVariant]} options={variants} key={`variant-${color}`} />
         {quantity ? Quantity : ""}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
