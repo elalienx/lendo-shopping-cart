@@ -25,11 +25,7 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
         <p className="name">{product.name}</p>
         <div className="buttons">
           Quantity: {quantity}
-          <ButtonCircle icon="minus" onClick={() => alert("min")} />
-          <ButtonCircle
-            icon="plus"
-            onClick={() => dispatch({ type: "add-quantity", payload: { index, option, ammount: 1 } })}
-          />
+          <ButtonCircle icon="plus" onClick={() => dispatch({ type: "add-quantity", payload: { index, option } })} />
           <ButtonCircle icon="trash-can" onClick={() => dispatch({ type: "delete-item", payload: index })} />
         </div>
       </div>

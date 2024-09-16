@@ -15,7 +15,7 @@ export default function cartReducer(state, actions) {
     case "add-item":
       return addItem(state, actions);
     case "add-quantity":
-      return addQuantity(state, actionss);
+      return addQuantity(state, actions);
     case "delete-item":
       return deleteItem(state, actions);
     default:

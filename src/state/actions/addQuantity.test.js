@@ -20,12 +20,11 @@ test("Updates an item in the state", () => {
         storage: ["250", "500"],
         quantity: 3, // quantity in stock
       },
-      ammount: 2, // valid because we have 1 in the cart, we want 2 more, and there is 3 in stock
     },
   };
   const result = [
     { id: 2, color: 0, variant: 1, quantity: 2 },
-    { id: 4, color: 0, variant: 1, quantity: 3 }, // Now have 3 Nintendo Switch in total
+    { id: 4, color: 0, variant: 1, quantity: 2 }, // Now have 2 Nintendo Switch in total
     { id: 6, color: 1, variant: 1, quantity: 3 },
   ];
 
@@ -50,9 +49,8 @@ test("Do not update state if there is not quantity available", () => {
       option: {
         color: "red",
         storage: ["250", "500"],
-        quantity: 3, // quantity in stock
+        quantity: 1, // quantity in stock
       },
-      ammount: 5, // invalid because we have 1 in the cart, we want 5 more, but there is only 3 in stock
     },
   };
   const result = [
