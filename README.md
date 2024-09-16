@@ -50,14 +50,14 @@ Create the following views/pages using the mock JSON:
 
 The tricky part is realizing that **color** serves as the index for product-option. Selecting the first color maps to `array[0]`, the second to `array[1]`, and so on. After that, it’s just a simple filter operation.
 
-## Future improvements
+## Future Improvements
 
-The project can be improved adding the following features:
+The project could be enhanced with the following features:
 
-1. Detect when adding the very same product, color, and variant to update quantity instead of adding other item to the cart array.
-1. This projects really could benefit from using Typescript.
-1. Refactor, an extra day would improve maintanbility.
-1. Build my own notification to avoid depending on a external library.
+1. Detect and update quantity for the same product, color, and variant instead of adding a new item to the cart.
+1. Incorporate TypeScript for better type safety.
+1. Refactor for improved maintainability (an extra day would help).
+1. Develop a custom notification system to avoid external libraries.
 1. Add Biome linter.
-1. Add Suspense for optimize build size.
-1. Improve the Product page design ([reference](./public/readme-product-page.png))
+1. Implement Suspense to optimize build size.
+1. Enhance the Product page design ([reference](./public/readme-product-page.png)).
