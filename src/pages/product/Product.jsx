@@ -31,8 +31,8 @@ export default function Product({ data }) {
   const product = data.find((item) => item.id === Number(id));
 
   // Safeguards
-  if (!product) return <EmptyState item={EmptyStateTexts.invalid_product} />;
-  if (!product.available) return <EmptyState item={EmptyStateTexts.not_available} />;
+  if (!product) return <EmptyState item={EmptyStateTexts.does_not_exist} />;
+  if (!product.available) return <EmptyState item={EmptyStateTexts.out_of_stock} />;
 
   // Derived properties
   const additionalDetails = `By ${product.brand} | Weight ${product.weight}`;
