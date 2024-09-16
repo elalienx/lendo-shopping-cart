@@ -19,7 +19,6 @@ image {
 
 .page {
   width: min(960px, 100% - 24px - 24px); /* 24px per side */
-  min-height: 100vh;
   margin-inline: auto;
-  padding: 24px 0 var(--space-big);
+  padding: 24px 0 48px;
 }
