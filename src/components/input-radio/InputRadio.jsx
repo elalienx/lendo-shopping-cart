@@ -21,7 +21,6 @@ InputRadio.propTypes = {
 };
 
 export default function InputRadio({ id, label, state, options }) {
-  console.log(id);
   // Components
   const Options = options.map((item, index) => <Radio key={`${id}-${index}-${item}`} id={id} index={index} state={state} name={item} />);
 

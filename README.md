@@ -52,7 +52,7 @@ The tricky part is realizing that **color** serves as the index for product-opti
 
 ## Bugs Alert 🐞
 
-1. There’s a bug preventing the selection of the Samsung TV due to the missing variant. The fix itself should only take a few minutes, but it’s the refactoring needed to identify the bug that takes time. I will take a look on Monday after work.
+1. There is a bug noticeable on the Nintendo Switch (probably on other products) where the radio key of the product variant is not being updated. Will take a look after work.
 
 ⚠️ **Note:** If you find any other bug, please open a pull request.
 
