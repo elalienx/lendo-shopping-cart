@@ -1,5 +1,5 @@
 // Node modules
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -69,7 +69,7 @@ export default function Product({ data }) {
         <h1>{product.name}</h1>
         <small>{additionalDetails}</small>
         <InputRadioColor label="Color:" id="color" state={[color, setColor]} options={colors} />
-        <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} />
+        {variants.length > 0 && <InputRadio label="Variant:" id={`variant-${color}`} state={[variant, setVariant]} options={variants} />}
         {quantity > 0 && <QuantityChooser state={[quantity, setQuantity]} availableQuantity={availableQuantity} />}
         <small>{availableQuantity} units left</small>
         {quantity > 0 && <PriceTag price={finalPrice} />}
