@@ -1,0 +1,64 @@
+/* Default shape */
+.radio-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-small);
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .swatch,
+  .indicator {
+    --size: 44px;
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100px;
+  }
+
+  .swatch {
+    background-color: transparent; /** transparent in case of an unknown color */
+    border: solid 8px var(--color-black);
+  }
+
+  .indicator {
+    --size: 12px; /** override to make the indicator small */
+
+    background-color: transparent;
+  }
+}
+
+.radio-color:hover .indicator {
+  background-color: var(--color-gray);
+}
+
+.radio-color input[type="radio"]:checked + .swatch + .indicator {
+  background-color: var(--color-yellow);
+}
+
+/* Custom colors */
+.radio-color .swatch {
+  &.red {
+    background-color: var(--color-red);
+  }
+  &.green {
+    background-color: var(--color-green);
+  }
+  &.blue {
+    background-color: var(--color-blue);
+  }
+  &.yellow {
+    background-color: var(--color-yellow);
+  }
+  &.gray {
+    background-color: var(--color-gray);
+  }
+  &.black {
+    background-color: black; /** true black to stand out of the border */
+  }
+  &.white {
+    background-color: white;
+  }
+}
