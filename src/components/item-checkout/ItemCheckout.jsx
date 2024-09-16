@@ -13,6 +13,7 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
 
   // Derived state
   const option = product.options[color]; // color acts as index
+  const quantityAvailable = option.quantity;
   const subTotal = product.price * quantity;
 
   return (
@@ -25,7 +26,11 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
         <p className="name">{product.name}</p>
         <div className="buttons">
           Quantity: {quantity}
-          <ButtonCircle icon="plus" onClick={() => dispatch({ type: "add-quantity", payload: { index, option } })} />
+          <ButtonCircle
+            icon="plus"
+            onClick={() => dispatch({ type: "add-quantity", payload: { index, option } })}
+            disabled={quantity >= quantityAvailable}
+          />
           <ButtonCircle icon="trash-can" onClick={() => dispatch({ type: "delete-item", payload: index })} />
         </div>
       </div>

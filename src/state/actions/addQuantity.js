@@ -1,5 +1,6 @@
 export default function addQuantity(state, action) {
   const { index, option } = action.payload;
+  console.log(action.payload);
 
   const clonedState = [...state];
   const selectedCartItem = clonedState[index];
