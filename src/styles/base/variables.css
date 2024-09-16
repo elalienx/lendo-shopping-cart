@@ -4,7 +4,7 @@
   --color-blue: #007aff;
   --color-gray: #6e6e6e;
   --color-green: #29c768;
-  --color-red: #f2256c;
+  --color-red: #e70d5a;
   --color-yellow: #f39c12;
 
   /* Special colors */
@@ -12,8 +12,7 @@
   --color-blue-dark: #0156b3; /** for button hover effect. */
 
   /* # Fonts */
-  --font-family: "Circular Pro", Helvetica, Segoe UI, Arial, ui-sans-serif,
-    sans-serif;
+  --font-family: "Circular Pro", Helvetica, Segoe UI, Arial, ui-sans-serif, sans-serif;
   --font-size-normal: 15px;
   --font-size-small: 12px;
   --font-weight-bold: 700;
