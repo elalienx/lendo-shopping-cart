@@ -1,6 +1,17 @@
+// Node modules
+import PropTypes from "prop-types";
+
 // Project files
 import ButtonCircle from "../../../components/button-circle/ButtonCircle";
 import "./quantity-chooser.css";
+
+QuantityChooser.propTyes = {
+  /** The state controlling the quantity. */
+  state: PropTypes.array.isRequired,
+
+  /** The maximum ammount of units of this product. Used to set a limit of how many you can choose. */
+  availableQuantity: PropTypes.number.isRequired,
+};
 
 export default function QuantityChooser({ state, availableQuantity }) {
   const [quantity, setQuantity] = state;

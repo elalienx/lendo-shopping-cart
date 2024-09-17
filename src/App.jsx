@@ -29,13 +29,13 @@ export default function App() {
   return (
     <div className="app">
       <NavigationBar number={itemsOnCart} />
+      <Toaster />
       <Routes>
         <Route path="/" element={home} />
         <Route path="/product/:id" element={product} />
         <Route path="/checkout" element={checkout} />
         <Route path="*" element={pageNotFound} />
       </Routes>
-      <Toaster />
     </div>
   );
 }

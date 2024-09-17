@@ -1,5 +1,5 @@
 // Project file
-import ItemCheckout from "../../components/item-checkout/ItemCheckout";
+import ItemCart from "../../components/item-cart/ItemCart";
 
 // Decorators
 function DecoratorPage({ children }) {
@@ -41,7 +41,7 @@ const item = {
 export default {
   Default: (
     <DecoratorPage>
-      <ItemCheckout product={product} item={item} />
+      <ItemCart product={product} item={item} />
     </DecoratorPage>
   ),
 };

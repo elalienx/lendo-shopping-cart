@@ -1,11 +1,19 @@
+// Node modules
+import PropTypes from "prop-types";
+
 // Project files
 import Button from "../../components/button/Button";
 import EmptyState from "../../components/empty-state/EmptyState";
-import ItemCheckout from "../../components/item-checkout/ItemCheckout";
+import ItemCart from "../../components/item-cart/ItemCart";
 import PriceTag from "../../components/price-tag/PriceTag";
 import { useCart } from "../../state/CartContext";
+import Product from "../../propTypes/Product";
 import EmptyStateText from "./empty-state-text.json";
 import "./checkout.css";
+
+Checkout.propTypes = {
+  data: PropTypes.arrayOf(Product.item).isRequired,
+};
 
 export default function Checkout({ data }) {
   // Global state
@@ -21,9 +29,7 @@ export default function Checkout({ data }) {
   if (!cart.length) return <EmptyState item={EmptyStateText} />;
 
   // Components
-  const Items = cart.map((item, index) => (
-    <ItemCheckout key={index} product={products[index]} item={item} index={index} dispatch={dispatch} />
-  ));
+  const Items = cart.map((item, index) => <ItemCart key={index} product={products[index]} item={item} index={index} dispatch={dispatch} />);
 
   return (
     <div id="checkout" className="page">
