@@ -1,8 +1,16 @@
+// Node modules
+import PropTypes from "prop-types";
+
 // Project files
 import ItemProduct from "../../components/item-product/ItemProduct";
 import EmptyState from "../../components/empty-state/EmptyState";
+import Product from "../../propTypes/Product";
 import EmptyStateText from "./empty-state-text.json";
 import "./home.css";
+
+Home.propTypes = {
+  data: PropTypes.arrayOf(Product.item).isRequired,
+};
 
 export default function Home({ data }) {
   // Safeguards

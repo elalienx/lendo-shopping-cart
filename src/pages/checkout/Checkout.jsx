@@ -1,11 +1,19 @@
+// Node modules
+import PropTypes from "prop-types";
+
 // Project files
 import Button from "../../components/button/Button";
 import EmptyState from "../../components/empty-state/EmptyState";
 import ItemCart from "../../components/item-cart/ItemCart";
 import PriceTag from "../../components/price-tag/PriceTag";
 import { useCart } from "../../state/CartContext";
+import Product from "../../propTypes/Product";
 import EmptyStateText from "./empty-state-text.json";
 import "./checkout.css";
+
+Checkout.propTypes = {
+  data: PropTypes.arrayOf(Product.item).isRequired,
+};
 
 export default function Checkout({ data }) {
   // Global state
