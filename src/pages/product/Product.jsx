@@ -1,6 +1,7 @@
 // Node modules
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import toast from "react-hot-toast";
 
 // Project files
@@ -11,10 +12,15 @@ import InputRadio from "../../components/input-radio/InputRadio";
 import InputRadioColor from "../../components/input-radio-color/InputRadioColor";
 import PriceTag from "../../components/price-tag/PriceTag";
 import QuantityChooser from "./components/QuantityChooser";
+import ProductPropType from "../../propTypes/Product";
 import extractVariant from "../../scripts/extractVariant";
 import { useCart } from "../../state/CartContext";
 import EmptyStateTexts from "./empty-state-texts.json";
 import "./product.css";
+
+Product.propTypes = {
+  data: PropTypes.arrayOf(ProductPropType.item).isRequired,
+};
 
 export default function Product({ data }) {
   // Global state
