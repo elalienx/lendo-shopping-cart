@@ -6,6 +6,6 @@ const ps2Image = `https://sportshub.cbsistatic.com/i/2022/12/24/9f5819d2-1578-46
 const ps2Alt = `A now classic console on a blue background.`;
 
 export default {
-  NormalImage: <ImageThumbnail image={ps2Image} alt={ps2Alt} />,
+  Image: <ImageThumbnail image={ps2Image} alt={ps2Alt} />,
   NoImage: <ImageThumbnail image="" alt="" />,
 };

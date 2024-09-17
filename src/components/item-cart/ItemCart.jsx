@@ -4,11 +4,11 @@ import toast from "react-hot-toast";
 // Project files
 import ImageThumbnail from "../image-thumbnail/ImageThumbnail";
 import NotAvailable from "../not-available/NotAvailable";
-import ButtonCircle from "../../components/button-circle/ButtonCircle";
+import ButtonCircle from "../button-circle/ButtonCircle";
 import PriceTag from "../price-tag/PriceTag";
-import "./item-checkout.css";
+import "./item-cart.css";
 
-export default function ItemCheckout({ product, item, index, dispatch }) {
+export default function ItemCart({ product, item, index, dispatch }) {
   const { color, quantity } = item;
 
   // Safeguards
@@ -30,7 +30,7 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
   }
 
   return (
-    <article className="item-checkout">
+    <article className="item-cart">
       {/* Left */}
       <ImageThumbnail />
 

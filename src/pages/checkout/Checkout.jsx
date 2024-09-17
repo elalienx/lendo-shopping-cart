@@ -1,7 +1,7 @@
 // Project files
 import Button from "../../components/button/Button";
 import EmptyState from "../../components/empty-state/EmptyState";
-import ItemCheckout from "../../components/item-checkout/ItemCheckout";
+import ItemCart from "../../components/item-cart/ItemCart";
 import PriceTag from "../../components/price-tag/PriceTag";
 import { useCart } from "../../state/CartContext";
 import EmptyStateText from "./empty-state-text.json";
@@ -21,9 +21,7 @@ export default function Checkout({ data }) {
   if (!cart.length) return <EmptyState item={EmptyStateText} />;
 
   // Components
-  const Items = cart.map((item, index) => (
-    <ItemCheckout key={index} product={products[index]} item={item} index={index} dispatch={dispatch} />
-  ));
+  const Items = cart.map((item, index) => <ItemCart key={index} product={products[index]} item={item} index={index} dispatch={dispatch} />);
 
   return (
     <div id="checkout" className="page">
