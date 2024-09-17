@@ -1,3 +1,6 @@
+// Node modules
+import toast from "react-hot-toast";
+
 // Project files
 import ImageThumbnail from "../image-thumbnail/ImageThumbnail";
 import NotAvailable from "../not-available/NotAvailable";
@@ -11,10 +14,20 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
   // Safeguards
   if (!product) return <NotAvailable />;
 
-  // Derived state
+  // Properties
   const option = product.options[color]; // color acts as index
   const quantityAvailable = option.quantity;
   const subTotal = product.price * quantity;
+  const buttonMinusIsEnabled = quantity === 1;
+  const buttonAddIsEnabled = quantity >= quantityAvailable;
+
+  // Methods
+  function onDelete() {
+    const toastStyle = { backgroundColor: "#e70d5a", color: "white" };
+
+    toast("Deleted item from cart", { position: "bottom-right", style: toastStyle });
+    dispatch({ type: "delete-item", payload: index });
+  }
 
   return (
     <article className="item-checkout">
@@ -26,17 +39,9 @@ export default function ItemCheckout({ product, item, index, dispatch }) {
         <p className="name">{product.name}</p>
         <div className="buttons">
           Quantity: {quantity}
-          <ButtonCircle
-            icon="minus"
-            onClick={() => dispatch({ type: "remove-quantity", payload: index })}
-            disabled={quantity === 1}
-          />
-          <ButtonCircle
-            icon="plus"
-            onClick={() => dispatch({ type: "add-quantity", payload: { index, option } })}
-            disabled={quantity >= quantityAvailable}
-          />
-          <ButtonCircle icon="trash-can" onClick={() => dispatch({ type: "delete-item", payload: index })} />
+          <ButtonCircle icon="minus" onClick={() => dispatch({ type: "remove-quantity", payload: index })} disabled={buttonMinusIsEnabled} />
+          <ButtonCircle icon="plus" onClick={() => dispatch({ type: "add-quantity", payload: { index, option } })} disabled={buttonAddIsEnabled} />
+          <ButtonCircle icon="trash-can" onClick={() => onDelete()} />
         </div>
       </div>
 
