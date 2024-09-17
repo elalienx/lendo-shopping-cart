@@ -1,5 +1,4 @@
 .item-product {
-  --image-size: 48px;
   --background-color: white; /** to align the background and border to the same color, so on hover we don't get visual glitches when we add a border. */
 
   display: flex;
@@ -13,6 +12,8 @@
 
   /* Left */
   .image-thumbnail {
+    --image-size: 48px;
+
     width: var(--image-size);
     height: var(--image-size);
   }
@@ -46,16 +47,15 @@
 
 @media (min-width: 750px) {
   .item-product {
-    --image-width: 195px;
-    --image-height: 122px;
-
     flex-direction: column;
     align-items: start;
     padding: var(--space-medium);
 
     /* Top */
     .image-thumbnail {
-      width: var(--image-width);
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4/3;
       height: var(--image-height);
     }
 
