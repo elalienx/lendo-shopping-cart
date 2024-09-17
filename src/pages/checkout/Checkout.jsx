@@ -8,6 +8,7 @@ import ItemCart from "../../components/item-cart/ItemCart";
 import PriceTag from "../../components/price-tag/PriceTag";
 import { useCart } from "../../state/CartContext";
 import Product from "../../propTypes/Product";
+import calculateGrandTotal from "../../scripts/calculateGrandTotal";
 import EmptyStateText from "./empty-state-text.json";
 import "./checkout.css";
 
@@ -20,16 +21,14 @@ export default function Checkout({ data }) {
   const { cart, dispatch } = useCart();
 
   // Properties
-  const products = cart.map((item) => data.find((product) => product.id === item.id));
-  const prices = products.map((item) => Number(item.price));
-  const quantities = cart.map((item) => item.quantity);
-  const grandTotal = prices.reduce((sum, price, index) => sum + price * quantities[index], 0);
+  const matchingProducts = cart.map((item) => data.find((product) => product.id === item.id));
+  const grandTotal = calculateGrandTotal(matchingProducts, cart);
 
   // Safeguards
   if (!cart.length) return <EmptyState item={EmptyStateText} />;
 
   // Components
-  const Items = cart.map((item, index) => <ItemCart key={index} product={products[index]} item={item} index={index} dispatch={dispatch} />);
+  const Items = cart.map((item, index) => <ItemCart key={index} product={matchingProducts[index]} item={item} index={index} dispatch={dispatch} />);
 
   return (
     <div id="checkout" className="page">
