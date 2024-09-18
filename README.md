@@ -17,7 +17,7 @@ To run locally clone this repository into your computer and then:
 1. Reducers to mutate the state outside React and make it easily testable.
 1. Responsive design.
 1. User flows to plan the UX ([link](https://whimsical.com/lendo-Devit5GaSiDyojUePbMpEz@6HYTAunKLgTVswxCCSQ4eXBALzucnJcoopxkWQAUe9NGL4J))
-1. Optimized bundle size, asset loading, and cache policies to reach a 100/100 score in ([Google Page Speed Insights](./public/readme-page-speed.png)).
+1. Optimized bundle size, asset loading, and cache policies to reach a score of 100/100 in ([Google Page Speed Insights](./public/readme-page-speed.png)).
 
 ## View React Components
 
