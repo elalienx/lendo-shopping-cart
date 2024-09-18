@@ -51,6 +51,7 @@ The tricky part is realizing that **color** serves as the index for product-opti
 ## Bugs Alert 🐞
 
 1. ~There is a bug noticeable on the Nintendo Switch (probably on other products) where the radio key of the product variant is not being updated. Will take a look after work.~ ✅ (fixed on 2024-9-16 at 13:41)
+1. ~Input radio's must be accessibile~ ✅ (fixed on 2024-9-18 at 18:18)
 
 ⚠️ **Note:** If you find any other bug, please open a pull request.
 

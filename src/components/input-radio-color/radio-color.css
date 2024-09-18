@@ -6,36 +6,31 @@
   gap: var(--space-small);
 
   input[type="radio"] {
-    display: none;
+    --size: 12px;
+    appearance: none;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 100px;
+    background-color: var(--page-color);
   }
 
-  .swatch,
-  .indicator {
+  input[type="radio"]:hover {
+    background-color: var(--color-gray);
+  }
+
+  input[type="radio"]:checked {
+    background-color: var(--color-yellow);
+  }
+
+  .swatch {
     --size: 44px;
 
+    background-color: transparent; /** transparent in case of an unknown color */
+    border: solid 8px var(--color-black);
     width: var(--size);
     height: var(--size);
     border-radius: 100px;
   }
-
-  .swatch {
-    background-color: transparent; /** transparent in case of an unknown color */
-    border: solid 8px var(--color-black);
-  }
-
-  .indicator {
-    --size: 12px; /** override to make the indicator small */
-
-    background-color: transparent;
-  }
-}
-
-.radio-color:hover .indicator {
-  background-color: var(--color-gray);
-}
-
-.radio-color input[type="radio"]:checked + .swatch + .indicator {
-  background-color: var(--color-yellow);
 }
 
 /* Custom colors */

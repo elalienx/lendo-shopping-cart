@@ -3,7 +3,3 @@
     margin-right: var(--space-small);
   }
 }
-
-.radio input:focus {
-  outline: none;
-}
