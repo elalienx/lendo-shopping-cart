@@ -10,29 +10,11 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(eot|otf|ttf|ttc|woff|woff2|font.css)",
+        "source": "**/*.@(jpg|jpeg|png|gif|ico|css|js|woff|woff2|ttf|svg|avif|webp)",
         "headers": [
           {
             "key": "Access-Control-Allow-Origin",
-            "value": "*"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(js|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
-          }
-        ]
-      },
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|avif)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=604800"
+            "value": "max-age=31536000"
           }
         ]
       }
