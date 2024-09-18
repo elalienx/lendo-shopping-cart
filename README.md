@@ -1,7 +1,5 @@
 # Lendo Shopping Cart
 
-This is a coding assignment for Lendo.
-
 Link to demo: [Demo website](https://lendo-shopping-cart.web.app)
 
 ## Installation
