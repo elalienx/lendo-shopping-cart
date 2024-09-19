@@ -26,7 +26,8 @@ export default function EmptyState({ item }) {
   return (
     <div className="empty-state">
       <picture>
-        <source srcSet={`${image}.avif 2x`} width="234" height="200" media="(max-width: 400px)" />
+        <source srcSet={`${image}-desktop-2x.avif 2x`} width="368" height="315" media="(min-width: 750px)" />
+        <source srcSet={`${image}.avif 2x`} width="234" height="200" />
         <img alt={alt} className="image" src={`${image}-desktop.avif`} width="368" height="315" fetchpriority="high" />
       </picture>
       <h1>{title}</h1>
