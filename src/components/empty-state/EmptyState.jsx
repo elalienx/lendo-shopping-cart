@@ -15,7 +15,7 @@ EmptyState.propTypes = {
     /** An image related to the text above. */
     image: PropTypes.string.isRequired,
 
-    /** Description of the image for accessibility. It's optional as it won't break the componet, but please add it. */
+    /** Description of the image for accessibility. It's optional as it won't break the component, but please add it. */
     alt: PropTypes.string,
   }),
 };
@@ -26,15 +26,8 @@ export default function EmptyState({ item }) {
   return (
     <div className="empty-state">
       <picture>
-        <source srcSet={`${image}.avif`} width="234" height="200" media="(max-width: 400px)" />
-        <img
-          alt={alt}
-          className="image"
-          src={`${image}-desktop.avif`}
-          width="368"
-          height="315"
-          fetchpriority="high"
-        />
+        <source srcSet={`${image}.avif 2x`} width="234" height="200" media="(max-width: 400px)" />
+        <img alt={alt} className="image" src={`${image}-desktop.avif`} width="368" height="315" fetchpriority="high" />
       </picture>
       <h1>{title}</h1>
       <p>{text}</p>
