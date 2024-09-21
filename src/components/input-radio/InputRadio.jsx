@@ -25,9 +25,9 @@ export default function InputRadio({ id, label, state, options }) {
   const Options = options.map((item, index) => <Radio key={`${id}-${index}`} id={id} index={index} state={state} name={item} />);
 
   return (
-    <label className="input-radio">
+    <div className="input-radio">
       <h3>{label}</h3>
       <div className="options">{Options}</div>
-    </label>
+    </div>
   );
 }

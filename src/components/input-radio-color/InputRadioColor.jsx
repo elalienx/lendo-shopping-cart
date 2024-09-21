@@ -26,9 +26,9 @@ export default function InputRadioColor({ id, label, state, options }) {
   ));
 
   return (
-    <label className="input-radio-color">
+    <div className="input-radio-color">
       <h3>{label}</h3>
       <div className="options">{Options}</div>
-    </label>
+    </div>
   );
 }
