@@ -5,7 +5,7 @@
   align-items: center;
   gap: var(--space-small);
 
-  input[type="radio"] {
+  input {
     --size: 12px;
     appearance: none;
     width: var(--size);
@@ -14,11 +14,11 @@
     background-color: var(--page-color);
   }
 
-  input[type="radio"]:hover {
+  input:hover {
     background-color: var(--color-gray);
   }
 
-  input[type="radio"]:checked {
+  input:checked {
     background-color: var(--color-yellow);
   }
 
