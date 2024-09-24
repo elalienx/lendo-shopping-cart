@@ -65,5 +65,5 @@ The project could be enhanced with the following features:
 1. Refactor for improved maintainability (an extra day would help).
 1. Develop a custom notification system to avoid external libraries.
 1. Add Biome linter.
-1. Implement Suspense to optimize build size.
 1. Enhance the Product page design ([reference](./public/readme-product-page.png)).
+1. ~Implement Suspense to optimize build size.~ ✅ (added on 2024-9-18)
