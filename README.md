@@ -4,7 +4,7 @@ Link to demo: [Demo website](https://lendo-shopping-cart.web.app)
 
 ## Installation
 
-To run locally clone this repository into your computer and then:
+To run locally, clone this repository into your computer and then:
 
 1. Install dependencies using `npm clean-install` to ensure using the same versions as the project.
 1. Run using `npm run dev`
